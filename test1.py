@@ -34,14 +34,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-# ---------- 工具函数 ----------
 def get_page(url):
     try:
         resp = requests.get(url, headers=HEADERS, timeout=30)
         resp.raise_for_status()
         return resp.text
     except Exception as e:
-        logger.error(f"请求失败 {url}: {e}")
+        logger.error(f"error {url}: {e}")
         return None
 
 
@@ -97,7 +96,6 @@ def save_state(state):
         json.dump(state, f, indent=2, ensure_ascii=False)
 
 
-# ---------- 核心检测逻辑 ----------
 def check_statement_of_changes():
     collection_url = "https://www.gov.uk/government/collections/immigration-rules-statement-of-changes"
     logger.info(f"check the changes: {collection_url}")

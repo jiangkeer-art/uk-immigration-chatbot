@@ -40,40 +40,21 @@ def load_pdf(filepath):
     return docs
 
 def main():
-    print("=" * 60)
-    print("重建向量数据库...")
-    print(f"数据目录: {DATA_DIR}")
-    print(f"数据库目录: {DB_DIR}")
-    print("=" * 60)
 
-    # 1. 检查数据目录是否存在且非空
     if not Path(DATA_DIR).exists():
-        print(f"数据目录不存在: {DATA_DIR}")
         return
 
     files = list(Path(DATA_DIR).glob("*"))
-    print(f"数据目录中的文件数: {len(files)}")
+    print(f"Files: {len(files)}")
     for f in files:
         print(f"   - {f.name} ({f.stat().st_size} bytes)")
 
-    # 2. 查找最新的 HTML 和 PDF（用更宽松的匹配）
     html_pattern = "statement_of_change_HC*.html"
     pdf_pattern = "immigration_rules_full_*.pdf"
 
     html_files = list(Path(DATA_DIR).glob(html_pattern))
     pdf_files = list(Path(DATA_DIR).glob(pdf_pattern))
 
-    print(f"🔍 匹配 HTML 模式 ({html_pattern}) 的文件: {len(html_files)}")
-    for f in html_files:
-        print(f"   - {f.name}")
-
-    print(f"🔍 匹配 PDF 模式 ({pdf_pattern}) 的文件: {len(pdf_files)}")
-    for f in pdf_files:
-        print(f"   - {f.name}")
-
-    if not html_files and not pdf_files:
-        print("没有找到任何匹配的文件，请检查文件名格式是否符合预期。")
-        return
 
     # 按修改时间排序取最新
     html_file = sorted(html_files, key=lambda f: f.stat().st_mtime)[-1] if html_files else None
@@ -114,12 +95,10 @@ def main():
             traceback.print_exc()
 
     if not all_docs:
-        print("没有加载到任何文档，数据库构建终止。")
         return
 
     print(f"总文档数: {len(all_docs)}")
 
-    # 4. 分块
     print("开始分块...")
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
@@ -131,19 +110,15 @@ def main():
     print(f"生成的文本块数: {len(chunks)}")
 
     if not chunks:
-        print("分块结果为 0，请检查文档内容是否太短或为空。")
-        # 打印每个文档的前200字符供参考
+        # 打印前200字符
         for i, doc in enumerate(all_docs):
             print(f"  Doc {i+1} 预览: {doc.page_content[:200]}...")
         return
 
-    # 5. 删除旧数据库
     if Path(DB_DIR).exists():
         shutil.rmtree(DB_DIR)
-        print(f"已删除旧数据库: {DB_DIR}")
 
-    # 6. 构建新数据库
-    print("构建向量数据库...")
+    print("构建数据库...")
     try:
         embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
         print(f"加载嵌入模型: {EMBEDDING_MODEL}")
