@@ -34,6 +34,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+
 def get_page(url):
     try:
         resp = requests.get(url, headers=HEADERS, timeout=30)
