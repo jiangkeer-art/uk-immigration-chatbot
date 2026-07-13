@@ -12,9 +12,6 @@ from langdetect import detect
 
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
-# ============================================================
-# 配置
-# ============================================================
 
 START_URLS = [
     "https://www.gov.uk/browse/visas-immigration",
@@ -28,35 +25,23 @@ CHUNK_OVERLAP = 150
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
 
-# ============================================================
-# 提取器 —— 只从 <main> 提取，找不到就丢弃
-# ============================================================
-
 def smart_extractor(html: str) -> str:
-    """
-    只提取 <main> 内的英文内容。
-    1. 检查 html lang 属性，若非 en 则丢弃
-    2. 若 lang 缺失，用 langdetect 检测正文语言，非英文则丢弃
-    """
+
     soup = BeautifulSoup(html, "html.parser")
 
-    # ---- 语言检测 ----
+    # 语言检测
     html_tag = soup.find("html")
     lang = html_tag.get("lang") if html_tag else None
 
-    # 如果 lang 属性存在但不是英文，直接丢弃
     if lang and not lang.startswith("en"):
-        print(f"    [跳过] 非英文页面 (lang={lang})")
         return ""
 
-    # 清理噪音（导航、页脚等）
+    # 清理噪音
     for tag in soup.find_all(["nav", "footer", "header", "aside", "script", "style", "noscript"]):
         tag.decompose()
 
-    # 只找 <main>
     main = soup.find("main")
     if not main:
-        print("    [跳过] 页面没有 <main> 标签")
         return ""
 
     # 提取标题
@@ -70,34 +55,20 @@ def smart_extractor(html: str) -> str:
         print("    [跳过] main 内内容过短")
         return ""
 
-    # ---- 如果 lang 属性缺失，用 langdetect 检测正文 ----
+    #lang 属性缺失
     if not lang or not lang.startswith("en"):
         try:
             detected = detect(body_text)
             if detected != "en":
-                print(f"    [跳过] 检测为非英文 (lang={detected})")
                 return ""
         except Exception:
-            # 检测失败时，默认保留（或你可以改为丢弃）
-            # 为了安全，这里选择保留（避免误杀），但你可以按需调整
             pass
 
-    print(f"    [提取] 标题: {title[:40]}... 内容长度: {len(body_text)} 字符")
+    print(f"提取标题: {title[:40]}... 内容长度: {len(body_text)} 字符")
     return f"Page Title: {title}\n\nContent: {body_text}"
 
 
-# ============================================================
-# 主程序
-# ============================================================
-
 def main():
-    print("=" * 70)
-    print("🇬🇧 英国移民RAG知识库（仅抓取 <main> 内容）")
-    print("=" * 70)
-    print(f"起始 URL: {START_URLS[0]}")
-    print(f"爬虫深度: {MAX_DEPTH}")
-    print(f"输出目录: {PERSIST_DIR}")
-    print("=" * 70)
 
     all_documents = []
     all_urls = []
@@ -110,7 +81,7 @@ def main():
             loader = RecursiveUrlLoader(
                 url=start_url,
                 max_depth=MAX_DEPTH,
-                extractor=smart_extractor,          # 只提取 <main>
+                extractor=smart_extractor,
                 prevent_outside=True,
                 headers={"User-Agent": USER_AGENT},
                 timeout=20,
@@ -161,7 +132,7 @@ def main():
         print("\n没有有效文档，程序终止。")
         return
 
-    # ---------- 分块 ----------
+    # 分块
     print("\n正在分块...")
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
@@ -172,7 +143,6 @@ def main():
     chunks = text_splitter.split_documents(all_documents)
     print(f"生成 {len(chunks)} 个文本块")
 
-    # ---------- 向量库 ----------
     print("\n构建向量数据库...")
     if os.path.exists(PERSIST_DIR):
         shutil.rmtree(PERSIST_DIR)
@@ -191,13 +161,10 @@ def main():
         print(f"构建失败: {e}")
         return
 
-    print("\n" + "=" * 70)
-    print("完成！")
-    print("=" * 70)
+    print("完成")
     print(f"原始页面数: {len(all_documents)}")
-    print(f"文本块数量: {len(chunks)}")
-    print(f"数据库路径: {os.path.abspath(PERSIST_DIR)}")
-    print("=" * 70)
+    print(f"文本块: {len(chunks)}")
+
 
 
 if __name__ == "__main__":
