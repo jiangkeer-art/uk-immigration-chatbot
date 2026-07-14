@@ -14,3 +14,5 @@ pypdf
 pypdfium2
 langdetect
 python-dotenv
+rank_bm25
+numpy

@@ -1,9 +1,13 @@
 import os
+import numpy as np
 from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from openai import OpenAI
 import time
+from rank_bm25 import BM25Okapi
+from langchain_core.documents import Document
+from sentence_transformers import CrossEncoder
 
 load_dotenv()
 client = OpenAI(
@@ -29,9 +33,9 @@ Requirements:
                 {"role": "system", "content": "You are a professional assistant for query rewriting."},
                 {"role": "user", "content": prompt}
             ],
-            model="deepseek-v4-flash",
+            model="deepseek-v4-pro",
             temperature=0.3,
-            max_tokens=200,
+            max_tokens=500,
             timeout=15.0
         )
         content = response.choices[0].message.content.strip()
@@ -64,6 +68,34 @@ vectordb2 = Chroma(
     embedding_function=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 )
 
+reranker = CrossEncoder('BAAI/bge-reranker-base', max_length=512)
+
+def build_bm25(db1, db2):
+    all_texts = []
+    for db in (db1, db2):
+        data = db.get(include=['documents'])
+        all_texts.extend(data['documents'])
+    # 去重
+    seen = set()
+    unique = []
+    for t in all_texts:
+        if t not in seen:
+            seen.add(t)
+            unique.append(t)
+    # 英文分词
+    tokenized = [t.lower().split() for t in unique]
+    bm25 = BM25Okapi(tokenized)
+    return bm25, unique
+
+bm25_index, bm25_texts = build_bm25(vectordb, vectordb2)
+
+def bm25_search(query, k=3):
+    tokens = query.lower().split()
+    scores = bm25_index.get_scores(tokens)
+    top_n = np.argsort(scores)[::-1][:k]
+    return [(bm25_texts[i], scores[i]) for i in top_n]
+
+
 def rag_answer(question, debug=False):
     print(f"vectordb 文档数: {vectordb._collection.count()}")
     print(f"vectordb2 文档数: {vectordb2._collection.count()}")
@@ -76,6 +108,7 @@ def rag_answer(question, debug=False):
     all_docs = []
 
     for query in search_queries:
+        # 向量检索
         docs1 = vectordb.similarity_search(query, k=3)
         docs2 = vectordb2.similarity_search(query, k=3)
         for doc in docs1 + docs2:
@@ -86,10 +119,24 @@ def rag_answer(question, debug=False):
                 src = doc.metadata.get("source", "Unknown")
                 seen_sources.add(src)
 
+        # 关键词检索
+        bm25_results = bm25_search(query, k=3)
+        for text, score in bm25_results:
+            if text not in seen_contents:
+                seen_contents.add(text)
+                #包装为简易文档
+                all_docs.append(Document(page_content=text, metadata={"source": "BM25_match"}))
+                seen_sources.add("BM25_match")
+
     search_time = time.time() - start
     print(f"[搜索耗时] {search_time:.3f} 秒")
 
-    context = "\n\n".join([doc.page_content for doc in all_docs])
+    pairs = [[question, doc.page_content] for doc in all_docs]
+    scores = reranker.predict(pairs)
+    sorted_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)
+    top_docs = [all_docs[i] for i in sorted_indices[:4]]
+
+    context = "\n\n".join([doc.page_content for doc in top_docs])
 
     prompt = f"""You are a UK immigration advisor. Answer the question based on the provided context.
 
@@ -110,9 +157,9 @@ Answer:"""
                 {"role": "system", "content": "You are a precise UK immigration advisor."},
                 {"role": "user", "content": prompt},
             ],
-            model="deepseek-v4-flash",
+            model="deepseek-v4-pro",
             temperature=0.0,
-            max_tokens=1500,
+            max_tokens=2000,
             timeout=30.0
         )
     except Exception as e:
