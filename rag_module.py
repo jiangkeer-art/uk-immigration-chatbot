@@ -6,9 +6,52 @@ from openai import OpenAI
 import time
 
 load_dotenv()
-client = client = OpenAI(
+client = OpenAI(
     api_key=os.environ.get('DEEPSEEK_API_KEY'),
     base_url="https://api.deepseek.com")
+
+def rewrite_query_multi(user_query, num_queries=3):
+    prompt = f"""You are a query optimizer for a UK immigration advisory system.
+User questions may be colloquial, vague, or multifaceted.
+Please rephrase the user's question into {num_queries} queries better suited for semantic retrieval within immigration policy documents.
+Requirements:
+- Each query should use formal, complete keywords—phrasing that would appear in the documents.
+- Aim to cover different aspects or phrasings of the question.
+- Output the list of queries directly, one per line, in Chinese or English (depending on the language of the question).
+- Do not include numbering, explanations, or any extra text.
+
+用户问题：{user_query}
+优化后的查询："""
+
+    try:
+        response = client.chat.completions.create(
+            messages=[
+                {"role": "system", "content": "You are a professional assistant for query rewriting."},
+                {"role": "user", "content": prompt}
+            ],
+            model="deepseek-v4-flash",
+            temperature=0.3,
+            max_tokens=200,
+            timeout=15.0
+        )
+        content = response.choices[0].message.content.strip()
+        # 解析成列表，过滤空行和可能的序号
+        lines = content.split('\n')
+        rewritten = []
+        for line in lines:
+            line = line.strip()
+            if line:
+                if line[0].isdigit() and '. ' in line:
+                    line = line.split('. ', 1)[1]
+                elif line.startswith('- '):
+                    line = line[2:]
+                rewritten.append(line)
+        if not rewritten:
+            return [user_query]
+        return rewritten
+    except Exception as e:
+        print(f"Query rewriting failed; using the original query.: {e}")
+        return [user_query]
 
 # 加载向量数据库（每次启动时加载）
 vectordb = Chroma(
@@ -24,23 +67,29 @@ vectordb2 = Chroma(
 def rag_answer(question, debug=False):
     print(f"vectordb 文档数: {vectordb._collection.count()}")
     print(f"vectordb2 文档数: {vectordb2._collection.count()}")
-    start = time.time()
-    docs1 = vectordb.similarity_search(question, k=3)
-    docs2 = vectordb2.similarity_search(question, k=3)
-    print(f"docs1 数量: {len(docs1)}, docs2 数量: {len(docs2)}")
 
-    seen = set()
-    merged_docs = []
-    for doc in docs1 + docs2:
-        content = doc.page_content
-        if content not in seen:
-            seen.add(content)
-            merged_docs.append(doc)
+    search_queries = rewrite_query_multi(question, num_queries=3)
+
+    start = time.time()
+    seen_contents = set()
+    seen_sources = set()
+    all_docs = []
+
+    for query in search_queries:
+        docs1 = vectordb.similarity_search(query, k=3)
+        docs2 = vectordb2.similarity_search(query, k=3)
+        for doc in docs1 + docs2:
+            content = doc.page_content
+            if content not in seen_contents:
+                seen_contents.add(content)
+                all_docs.append(doc)
+                src = doc.metadata.get("source", "Unknown")
+                seen_sources.add(src)
 
     search_time = time.time() - start
     print(f"[搜索耗时] {search_time:.3f} 秒")
 
-    context = "\n\n".join([doc.page_content for doc in merged_docs])
+    context = "\n\n".join([doc.page_content for doc in all_docs])
 
     prompt = f"""You are a UK immigration advisor. Answer the question based on the provided context.
 
@@ -74,13 +123,7 @@ Answer:"""
     if not answer:
         print("API返回空内容:", response)
 
-    seen = set()
-    sources = []
-    for doc in merged_docs:
-        src = doc.metadata.get("source", "Unknown")
-        if src not in seen:
-            seen.add(src)
-            sources.append(src)
+    sources = list(seen_sources) if seen_sources else []
     return answer, sources
 
 
