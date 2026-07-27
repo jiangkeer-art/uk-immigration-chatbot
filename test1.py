@@ -9,6 +9,7 @@ from pathlib import Path
 from datetime import datetime
 import logging
 import test
+import get_htmldata
 
 BASE_URL = "https://www.gov.uk"
 CHECK_INTERVAL = 3600 * 6  # 6小时检查一次
@@ -259,6 +260,7 @@ def check_and_update():
         logger.warning("can not get new rules")
 
     if a ==1:
+        get_htmldata.main()
         test.main()
         a = 0
 
