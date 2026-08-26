@@ -8,6 +8,9 @@ from urllib.parse import urljoin
 from pathlib import Path
 from datetime import datetime
 import logging
+os.environ["NO_PROXY"] = "127.0.0.1,localhost"
+os.environ["no_proxy"] = "127.0.0.1,localhost"
+os.environ["HF_HUB_OFFLINE"] = "1"
 import test
 import get_htmldata
 

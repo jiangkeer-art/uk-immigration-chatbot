@@ -1,4 +1,6 @@
 import os
+os.environ["NO_PROXY"] = "127.0.0.1,localhost"
+os.environ["no_proxy"] = "127.0.0.1,localhost"
 import numpy as np
 from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -57,15 +59,24 @@ Requirements:
         print(f"Query rewriting failed; using the original query.: {e}")
         return [user_query]
 
-# 加载向量数据库（每次启动时加载）
-vectordb = Chroma(
-    persist_directory="./immigration_db",
-    embedding_function=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(
+    model_name="all-MiniLM-L6-v2"
 )
 
+# 数据库1
+vectordb = Chroma(
+    collection_name="langchain",
+    host="127.0.0.1",
+    port=8000,
+    embedding_function=embeddings
+)
+
+# 数据库2
 vectordb2 = Chroma(
-    persist_directory="./immigration_db2",
-    embedding_function=HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    collection_name="langchain",
+    host="127.0.0.1",
+    port=8001,
+    embedding_function=embeddings
 )
 
 reranker = CrossEncoder('BAAI/bge-reranker-base', max_length=512)
@@ -89,6 +100,18 @@ def build_bm25(db1, db2):
 
 bm25_index, bm25_texts = build_bm25(vectordb, vectordb2)
 
+def rebuild_bm25():
+    global bm25_index, bm25_texts
+
+    print("重新加载两个数据库并构建 BM25...")
+
+    bm25_index, bm25_texts = build_bm25(
+        vectordb,
+        vectordb2
+    )
+
+    print(f"BM25 构建完成，文本块数: {len(bm25_texts)}")
+
 def bm25_search(query, k=3):
     tokens = query.lower().split()
     scores = bm25_index.get_scores(tokens)
@@ -97,6 +120,7 @@ def bm25_search(query, k=3):
 
 
 def rag_answer(question, debug=False):
+    rebuild_bm25()
     print(f"vectordb 文档数: {vectordb._collection.count()}")
     print(f"vectordb2 文档数: {vectordb2._collection.count()}")
 

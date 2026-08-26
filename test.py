@@ -1,5 +1,4 @@
 import os
-import shutil
 from pathlib import Path
 from bs4 import BeautifulSoup
 from langchain_community.document_loaders import PyPDFLoader
@@ -10,10 +9,26 @@ from langchain_chroma import Chroma
 
 
 DATA_DIR = "./immigration_data"
-DB_DIR = "./immigration_db"
+CHROMA_HOST = "127.0.0.1"
+CHROMA_PORT = 8001
+COLLECTION_NAME = "langchain"
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 150
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+
+def get_vectordb():
+    embeddings = HuggingFaceEmbeddings(
+        model_name=EMBEDDING_MODEL
+    )
+
+    vectordb = Chroma(
+        collection_name=COLLECTION_NAME,
+        host=CHROMA_HOST,
+        port=CHROMA_PORT,
+        embedding_function=embeddings
+    )
+
+    return vectordb
 
 def find_latest_file(pattern):
     files = list(Path(DATA_DIR).glob(pattern))
@@ -116,24 +131,34 @@ def main():
             print(f"  Doc {i+1} 预览: {doc.page_content[:200]}...")
         return
 
-    if Path(DB_DIR).exists():
-        shutil.rmtree(DB_DIR)
-
-    print("构建数据库...")
+    print("更新数据库...")
     try:
-        embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
-        print(f"加载嵌入模型: {EMBEDDING_MODEL}")
-        vectordb = Chroma.from_documents(
-            documents=chunks,
-            embedding=embeddings,
-            persist_directory=DB_DIR,
-        )
-        # 验证是否写入成功
+        print(f"连接 Chroma Server: {CHROMA_HOST}:{CHROMA_PORT}")
+
+        vectordb = get_vectordb()
+
+        # 获取原有数据
+        old_data = vectordb.get()
+        old_ids = old_data.get("ids", [])
+
+        print(f"数据库原有文本块: {len(old_ids)}")
+
+        # 删除旧数据
+        if old_ids:
+            print("正在删除旧数据...")
+            vectordb.delete(ids=old_ids)
+            print("旧数据删除完成")
+
+        # 写入新数据
+        print(f"正在写入 {len(chunks)} 个新文本块...")
+        vectordb.add_documents(chunks)
+
         count = vectordb._collection.count()
-        print(f"数据库保存成功，向量数: {count}")
-        print(f"路径: {os.path.abspath(DB_DIR)}")
+
+        print(f"数据库更新完成，当前向量数: {count}")
+
     except Exception as e:
-        print(f"数据库构建失败: {e}")
+        print(f"数据库更新失败: {e}")
         import traceback
         traceback.print_exc()
 

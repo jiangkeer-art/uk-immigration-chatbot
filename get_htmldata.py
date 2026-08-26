@@ -1,8 +1,6 @@
-import os
-import shutil
 import time
 import warnings
-from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
+from bs4 import XMLParsedAsHTMLWarning
 from langchain_community.document_loaders import RecursiveUrlLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -18,12 +16,27 @@ START_URLS = [
 ]
 
 MAX_DEPTH = 5
-PERSIST_DIR = "./immigration_db2"
+CHROMA_HOST = "127.0.0.1"
+CHROMA_PORT = 8000
+COLLECTION_NAME = "langchain"
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 150
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 
+def get_vectordb():
+    embeddings = HuggingFaceEmbeddings(
+        model_name=EMBEDDING_MODEL
+    )
+
+    vectordb = Chroma(
+        collection_name=COLLECTION_NAME,
+        host=CHROMA_HOST,
+        port=CHROMA_PORT,
+        embedding_function=embeddings
+    )
+
+    return vectordb
 
 def smart_extractor(html: str) -> str:
 
@@ -143,22 +156,37 @@ def main():
     chunks = text_splitter.split_documents(all_documents)
     print(f"生成 {len(chunks)} 个文本块")
 
-    print("\n构建向量数据库...")
-    if os.path.exists(PERSIST_DIR):
-        shutil.rmtree(PERSIST_DIR)
-        print("已删除旧数据库")
+    print("\n更新向量数据库...")
 
     try:
-        embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
-        print(f"加载模型: {EMBEDDING_MODEL}")
-        vectordb = Chroma.from_documents(
-            documents=chunks,
-            embedding=embeddings,
-            persist_directory=PERSIST_DIR,
-        )
-        print(f"数据库保存至: {PERSIST_DIR}")
+        print(f"连接 Chroma Server: {CHROMA_HOST}:{CHROMA_PORT}")
+
+        vectordb = get_vectordb()
+
+        # 获取数据库中原来的数据
+        old_data = vectordb.get()
+        old_ids = old_data.get("ids", [])
+
+        print(f"数据库原有文本块: {len(old_ids)}")
+
+        # 删除旧数据
+        if old_ids:
+            print("正在删除旧数据...")
+            vectordb.delete(ids=old_ids)
+            print("旧数据删除完成")
+
+        # 添加刚刚重新抓取的新数据
+        print(f"正在写入 {len(chunks)} 个新文本块...")
+        vectordb.add_documents(chunks)
+
+        count = vectordb._collection.count()
+
+        print(f"数据库更新完成，当前向量数: {count}")
+
     except Exception as e:
-        print(f"构建失败: {e}")
+        print(f"数据库更新失败: {e}")
+        import traceback
+        traceback.print_exc()
         return
 
     print("完成")
