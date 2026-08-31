@@ -1,0 +1,1039 @@
+﻿question_id,question,system,answer,sources,correctness,relevance,completeness
+Q01,My wife is a British citizen and I want to move to the UK to live with her. Which visa should I apply for?,LLM-only,"As the spouse of a British citizen, the most appropriate visa for you would be the **Spouse Visa** (also known as the **Family Visa – Partner route**). This visa allows you to live, work, and study in the UK, and it can lead to settlement (Indefinite Leave to Remain) after a qualifying period.
+
+## Key Requirements
+
+To qualify for a Spouse Visa, you and your wife must meet the following criteria:
+
+### 1. Relationship Requirement
+- You must be legally married or in a civil partnership recognised in the UK
+- Your relationship must be genuine and subsisting
+- You must intend to live together permanently in the UK
+
+### 2. Financial Requirement
+Your British citizen spouse must demonstrate a minimum income threshold of **£29,000 per year** (gross) before tax. This can be met through:
+- Employment or self-employment income
+- Cash savings above £16,000 (the formula is: savings minus £16,000, divided by 2.5, added to income)
+- Non-employment income (e.g., rental income, pension)
+- A combination of the above
+
+### 3. Accommodation Requirement
+You must show that you have adequate accommodation for you and your wife (and any dependants) without recourse to public funds.
+
+### 4. English Language Requirement
+You must prove your knowledge of English by either:
+- Passing an approved English language test at CEFR level A1 or above (for initial application)
+- Holding a degree taught or researched in English
+- Being a national of a majority English-speaking country
+
+## Application Process
+
+1. **Apply online** via the UK Visas and Immigration (UKVI) website
+2. **Pay the fees** – currently £1,846 for applications made outside the UK (plus Immigration Health Surcharge of £1,035 per year)
+3. **Submit biometrics** at a visa application centre
+4. **Provide supporting documents** (marriage certificate, financial evidence, accommodation proof, English language certificate, etc.)
+
+## Visa Duration and Settlement
+
+- The initial visa is granted for **2 years and 9 months** (if applying from outside the UK)
+- You will need to extend for a further **2 years and 6 months**
+- After **5 years** of continuous residence on this route, you may apply for **Indefinite Leave to Remain (ILR)**
+- After holding ILR for 12 months (and meeting other requirements), you may apply for **British citizenship**
+
+## Important Note
+
+If you are currently outside the UK, you must apply from your country of residence. If you are already in the UK on another visa, you may be able to switch to the Spouse Visa from within the UK, provided your current visa allows it.
+
+Would you like more detailed information on any specific requirement, such as the financial threshold or the English language test?",,1,2,2
+Q01,My wife is a British citizen and I want to move to the UK to live with her. Which visa should I apply for?,RAG,"Based on the context provided, if your wife is a British citizen and you want to move to the UK to live with her, you should apply for a **family visa**.
+
+According to Source 3, if you are a family member of a British citizen, you can no longer apply for an EU Settlement Scheme family permit (this was known as a ‘Surinder Singh’ application). Instead, it states: **“You may be able to apply for a family visa.”**
+
+Source 1 also indicates that the visa you need depends on who you are marrying and whether you want to live in the UK after, and it directs applicants to check the family visa route.
+
+For detailed guidance on eligibility requirements, financial thresholds, and the application process for a family visa as the spouse or partner of a British citizen, please check the official UK government website or consult a qualified immigration adviser.",https://www.gov.uk/family-permit?step-by-step-nav=b86a99b4-40be-4c12-a61c-9fac22e53ddc | https://www.gov.uk/visas-partner-dies | https://www.gov.uk/family-permit/if-living-outside-uk-with-british-citizen | https://www.gov.uk/visas-when-you-separate-or-divorce,2,2,1
+Q02,What is the minimum income requirement for a partner or spouse family visa?,LLM-only,"As of April 2024, the minimum income requirement for a partner or spouse family visa under Appendix FM of the UK Immigration Rules is **£29,000 per year** (gross).
+
+This applies to the sponsoring partner (the person already settled in the UK or with British citizenship) unless they are in receipt of certain benefits, in which case the adequate maintenance test applies instead.
+
+**Key points:**
+
+- The £29,000 figure is the **minimum income threshold** — if you have dependent children who are not British or settled, additional income may be required.
+- Income can be met through employment, self-employment, savings, pension, or certain other specified sources.
+- **Savings** can be used to supplement income: savings above £16,000 can be counted, with the formula being (savings – £16,000) ÷ 2.5 years.
+- The threshold was raised from £18,600 to £29,000 on **11 April 2024**.
+- The previous government had announced plans to raise it further to £34,500 and then £38,700, but the current government has paused these increases pending a review by the Migration Advisory Committee.
+
+If the application is made under the **5-year partner route**, the same £29,000 threshold applies at both initial application and extension stages.
+
+Would you like details on how income can be combined or evidenced?",,1,2,2
+Q02,What is the minimum income requirement for a partner or spouse family visa?,RAG,"Based on the provided context, the minimum income requirement for a partner or spouse family visa is **£29,000 a year** for most applicants.
+
+Source 1 states:
+
+> ""If you apply for a family visa as a partner, you and your partner usually need to prove that your combined income is at least £29,000 a year.""
+
+However, there are exceptions. Source 4 notes that if you first applied as a partner before 11 April 2024 and are extending that visa with the same partner, the requirement is lower:
+
+> ""If you’re extending your stay with the same partner, you and your partner will need to prove that your combined income is at least £18,600 a year.""
+
+Additionally, Source 2 (from the Immigration Rules) mentions a different figure of **£23,496** in the context of the Armed Forces financial requirement (AF 31.2), which applies specifically to certain HM Armed Forces cases rather than the standard partner visa route.
+
+So, in summary:
+- **Standard partner/spouse visa:** £29,000 per year
+- **Extension where first application was before 11 April 2024:** £18,600 per year
+- **Armed Forces cases (per Immigration Rules):** £23,496 per year
+
+For detailed guidance on your specific circumstances, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/uk-family-visa/proof-income-partner | immigration_data\immigration_rules_full_20260630.pdf | https://www.gov.uk/uk-family-visa/print,2,2,2
+Q03,What evidence can I provide to prove that my relationship with my partner is genuine?,LLM-only,"As a UK immigration advisor, I can outline the types of evidence typically accepted by UK Visas and Immigration (UKVI) to demonstrate that your relationship with your partner is genuine and subsisting. The key is to provide a broad range of evidence covering different aspects of your life together over time.
+
+## Core Evidence
+
+**Proof of cohabitation** (if you live together):
+- Tenancy agreement or mortgage statement in both names
+- Council tax bills
+- Utility bills (gas, electricity, water) in joint names or individually addressed to the same address
+- Bank statements showing the same address
+- Official correspondence (HMRC, NHS, DVLA, etc.) to the same address
+
+**Proof of relationship history:**
+- Marriage or civil partnership certificate (if applicable)
+- Photographs together across different periods and locations (including with family and friends)
+- Evidence of how you met and how your relationship developed (a timeline or written statement)
+- Evidence of communication during periods apart (call logs, WhatsApp/Skype screenshots, emails)
+
+## Financial Interdependence
+
+- Joint bank account statements showing shared expenses
+- Evidence of money transfers between you
+- Joint savings or investments
+- Shared insurance policies (life, home, car)
+- Evidence of one partner being named as beneficiary on the other's pension or life insurance
+
+## Shared Responsibilities
+
+- Joint utility or service contracts (broadband, mobile phone family plans)
+- Evidence of shared childcare responsibilities (if applicable)
+- Joint purchases or loans (car finance, furniture)
+- Evidence of shared household expenses
+
+## Social Evidence
+
+- Wedding or civil partnership photographs and invitations
+- Evidence of joint travel (flight bookings, hotel reservations, passport stamps)
+- Letters or cards addressed to both of you
+- Social media posts showing your relationship
+- Statements from friends and family confirming your relationship
+
+## If You Live Apart
+
+- Detailed explanation of why you live apart (work, study, family commitments)
+- Evidence of regular visits (travel tickets, boarding passes)
+- Frequent communication records
+- Evidence of future plans to live together
+
+## Important Tips
+
+1. **Provide evidence across the entire relationship**, not just recent months
+2. **Explain any gaps** in cohabitation or unusual circumstances
+3. **Use a covering letter** to explain your evidence and relationship timeline
+4. **Quality over quantity** — select the strongest, clearest evidence
+5. **Translate any documents** not in English or Welsh by a certified translator
+
+Would you like me to clarify any specific type of evidence or discuss your particular circumstances in more detail?",,2,2,2
+Q03,What evidence can I provide to prove that my relationship with my partner is genuine?,RAG,"Based on the provided context, you can provide the following evidence to prove your relationship is genuine:
+
+- **A marriage or civil partnership certificate** – this confirms the relationship and includes the name of the applicant and the husband, wife or civil partner (Source 1; Source 3).
+- **For unmarried or same-sex relationships similar to marriage or civil partnership**, you must provide **at least three of the following specified documents covering a full two-year period immediately before the date of application** (Source 1; Source 3):
+  1. a bank statement or letter from a bank confirming a joint bank account held in both names
+  2. an official document such as a mortgage agreement showing a joint mortgage
+  3. official documents such as deeds of ownership or a mortgage agreement showing a joint investment, such as in property or business
+  4. a joint rent (tenancy) agreement
+  5. any other official correspondence linking both partners to the same address
+
+Source 2 also confirms that when applying, you can use a marriage or civil partnership certificate for your partner, and suggests checking what other documents can be used to prove your relationship.
+
+For detailed guidance tailored to your specific circumstances, please check the official UK government website or consult a professional immigration adviser.",immigration_data\immigration_rules_full_20260630.pdf | https://www.gov.uk/student-visa/family-members | https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-a-attributes,1,2,1
+Q04,"I want to come to the UK to marry my British partner. How long can I stay as a fiancé or fiancée, and what happens after we marry?",LLM-only,"As a UK immigration advisor, here is the key information you need:
+
+**Fiancé(e) Visa – Length of Stay**
+
+A Fiancé(e) visa (officially a ""Marriage Visitor"" visa or a ""Fiancé(e) visa"" under the Family Route) is granted for **6 months**. During this time:
+
+- You must marry or enter into a civil partnership within that 6-month period.
+- You **cannot work** or claim public funds while on this visa.
+- You cannot switch to a spouse visa from within the UK on a Marriage Visitor visa (if you applied for that category). However, if you applied for a Fiancé(e) visa under the Family Route (Appendix FM), you **can** switch to a spouse visa from within the UK after marriage.
+
+**Important distinction:**
+
+- **Marriage Visitor visa** – for those who intend to marry in the UK but then leave the UK afterwards. You cannot switch to a spouse visa from within the UK; you must return home and apply from there.
+- **Fiancé(e) visa (Family Route / Appendix FM)** – for those who intend to marry in the UK and then settle here with their partner. This is the correct route if you plan to live in the UK after marriage.
+
+**After You Marry**
+
+If you entered on a **Fiancé(e) visa under the Family Route**, after your wedding or civil partnership you can apply to **switch to a Spouse/Partner visa (FLR(M))** from within the UK. This visa is initially granted for **30 months (2.5 years)**, and can be extended for a further 30 months. After 5 years on this route, you may be eligible to apply for **Indefinite Leave to Remain (settlement)**.
+
+**Key requirements for switching to a Spouse visa after marriage:**
+
+- Your partner must be a British citizen or settled in the UK.
+- You must meet the **financial requirement** (currently a minimum income threshold of £29,000 per year for most applications, rising to £34,500 in 2025 and £38,700 by early 2025 – please check the latest rules as these have been changing).
+- You must have **adequate accommodation**.
+- You must demonstrate a **genuine and subsisting relationship**.
+- You must meet the **English language requirement** (A1 level for the initial spouse visa).
+
+**Summary timeline:**
+
+1. Apply for Fiancé(e) visa (Family Route) → granted 6 months.
+2. Marry within 6 months.
+3. Apply to switch to Spouse visa (FLR(M)) → granted 30 months.
+4. Extend after 30 months → another 30 months.
+5. After 5 years total on the spouse route → apply for Indefinite Leave to Remain.
+
+Would you like more detail on the financial requirement, documentation, or the application process itself?",,1,2,2
+Q04,"I want to come to the UK to marry my British partner. How long can I stay as a fiancé or fiancée, and what happens after we marry?",RAG,"Based on the provided context, here is the relevant information:
+
+**How long you can stay as a fiancé(e) and what happens after marriage:**
+
+The context indicates that as a fiancé, fiancée, or proposed civil partner, you must intend to marry or enter into a civil partnership in the UK **within 6 months of arriving** (Source 1 and Source 2).
+
+After the marriage or civil partnership takes place, you would typically need to apply for further permission to stay as a partner. The context does not specify the exact length of the initial fiancé(e) visa, but it confirms the requirement that the marriage must occur within 6 months of arrival.
+
+**Additional requirements mentioned:**
+
+- You must prove you have a good knowledge of English (Source 1).
+- You must meet the financial requirements (Source 1).
+- For an extension of stay as a fiancé(e), the decision maker must be satisfied there is a good reason for any delay and that the marriage will take place within 6 months of the date of application (Source 3 and Source 4).
+
+For detailed guidance on the specific visa duration and the process for switching to a spouse visa after marriage, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/uk-family-visa/partner-spouse | https://www.gov.uk/stay-in-uk-stateless | https://www.gov.uk/government/publications/exempt-exm/appendix-hm-armed-forces-caseworker-guidance-accessible | immigration_data\immigration_rules_full_20260630.pdf,2,2,1
+Q05,How much money do I need to show when applying for a UK Student visa?,LLM-only,"As a UK immigration adviser, I can confirm that the financial requirement for a Student visa depends on **where you will be studying** and **whether you have paid any money towards your accommodation**.
+
+### 1. Course fees
+You must show that you have enough money to cover:
+- **The full first year of course fees** (or the entire course if it is less than one year), **minus** any fees you have already paid.
+
+### 2. Living costs (maintenance)
+The amount required for living costs depends on your study location:
+
+| Study location | Money needed per month | Maximum period you must show |
+|---|---|---|
+| **Inside London** | £1,483 | Up to 9 months |
+| **Outside London** | £1,136 | Up to 9 months |
+
+- If your course is **9 months or longer**, you must show **9 months** of living costs.
+- If your course is **shorter than 9 months**, you must show living costs for **each month of the course**.
+
+### 3. Dependants (if applicable)
+If you are bringing a partner or children, you must show additional funds:
+- **£845 per month** for a dependant in London (up to 9 months)
+- **£680 per month** for a dependant outside London (up to 9 months)
+
+### 4. Accommodation deposits
+If you have already paid a deposit for university accommodation, you can deduct **up to £1,334** from the living costs requirement.
+
+---
+
+### Example calculation (outside London, 12-month course)
+- Course fees: £15,000
+- Living costs: £1,136 × 9 = **£10,224**
+- **Total to show: £25,224** (minus any fees already paid)
+
+---
+
+### Important rules
+- The money must be held in an acceptable account (e.g., current or savings account) for **at least 28 consecutive days** before the application date.
+- The closing balance must not have dropped below the required amount during that 28-day period.
+- Bank statements must be **no older than 31 days** on the date of application.
+- If using a parent’s account, you must provide evidence of your relationship and their permission to use the funds.
+
+### Exemptions
+You do **not** need to show financial evidence if:
+- You have held a valid UK visa for **at least 12 months** at the time of application, or
+- You are applying as a **Student Union Sabbatical Officer**, or
+- You are a **doctor or dentist in training** on a recognised foundation programme.
+
+Would you like me to calculate the exact amount for your specific situation?",,1,2,2
+Q05,How much money do I need to show when applying for a UK Student visa?,RAG,"Based on the provided context, the amount of money you need to show depends on your circumstances and what you’re applying for. Specifically:
+
+- **Course fee:** You need enough money to pay for your course for 1 academic year (up to 9 months). The amount will be stated on your Confirmation of Acceptance for Studies (CAS).  
+- **Money to support yourself (‘financial requirement’):** You’ll need to show you have enough money to support yourself. How much you need depends on where you will be studying.  
+
+The context also notes that if you’ve been in the UK with a valid visa for at least 12 months on the date of your application, you do not need to prove you have this money for your visa application.
+
+Source: https://www.gov.uk/student-visa/money and https://www.gov.uk/student-visa/print
+
+For detailed guidance on the exact amounts and how to prove the funds, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/student-visa/money | https://www.gov.uk/student-visa/print,2,2,1
+Q06,What documents do I need to provide when applying for a Student visa?,LLM-only,"As a UK immigration advisor, I can confirm that when applying for a Student visa (formerly Tier 4), you will generally need to provide the following documents:
+
+1. **Valid passport or travel document**
+2. **Confirmation of Acceptance for Studies (CAS)** reference number from your licensed sponsor
+3. **Proof of financial support** – bank statements showing you have enough money to cover your course fees and living costs for a set period (usually 28 consecutive days)
+4. **Proof of English language proficiency** – e.g. a Secure English Language Test (SELT) certificate, unless exempt
+5. **Academic qualifications** – as listed on your CAS (e.g. certificates or transcripts)
+6. **Tuberculosis (TB) test results** – if you are from a country where the test is required and you are coming to the UK for more than 6 months
+7. **ATAS certificate** – if your course and nationality require it (for certain sensitive subjects at postgraduate level)
+8. **Parental or legal guardian consent** – if you are under 18
+9. **Proof of relationship to your parent/guardian** – if you are under 18 and using their financial evidence
+10. **Translations** – any document not in English or Welsh must be accompanied by a certified translation
+
+You may also need to provide **biometric information** (fingerprints and photograph) as part of the application process.
+
+Would you like guidance on the specific financial requirements or the English language evidence?",,1,2,2
+Q06,What documents do I need to provide when applying for a Student visa?,RAG,"According to the official UK government website, when you apply for your Student visa you must provide:
+
+- a current passport or other valid travel documentation
+- a Confirmation of Acceptance for Studies (CAS) from your course provider
+
+You may also need to provide:
+
+- proof you have enough money to support yourself and pay for your course – this will vary depending on your circumstances
+- a valid ATAS certificate if your course and nationality require it
+- proof of parental or other legal guardian consent if you’re under 18
+- proof of your relationship to your parent or guardian if you’re under 18
+- your tuberculosis test results
+- written consent for your application from your financial sponsor if you’ve received sponsorship for your course fees and living costs in the last 12 months
+
+Source: https://www.gov.uk/student-visa/documents-you-must-provide and https://www.gov.uk/student-visa/print
+
+For detailed guidance tailored to your circumstances, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/student-visa/documents-you-must-provide?step-by-step-nav=cafcc40a-c1ff-4997-adb4-2fef47af194d | https://www.gov.uk/student-visa/print | https://www.gov.uk/apply-to-come-to-the-uk | https://www.gov.uk/government/publications/student-sponsor-guidance/sponsorship-duties-accessible,2,2,2
+Q07,Do all Student visa applicants need to provide financial evidence?,LLM-only,"No, not all Student visa applicants need to provide financial evidence at the time of application. Whether you must submit financial documents depends on your nationality, where you are applying from, and how long you have been in the UK with valid permission.
+
+**Who is exempt from providing financial evidence?**
+
+You do **not** need to provide financial evidence if you are a national of a country listed under the “differential evidence requirement” (also known as Appendix Student, paragraph ST 22.1). This includes countries such as:
+
+- Australia
+- Canada
+- Japan
+- New Zealand
+- Singapore
+- South Korea
+- The United States
+- Hong Kong (SAR)
+- Malaysia
+- And others on the Home Office list
+
+You are also exempt if you have been in the UK with valid permission for at least 12 months on the date of application.
+
+**Important caveat**
+
+Even if you are exempt from *providing* the documents, you must still **meet the financial requirement** and be able to produce the evidence if the Home Office requests it. The exemption only removes the obligation to submit the documents with your application; it does not remove the underlying requirement.
+
+**Who must provide financial evidence?**
+
+If you are not a national of a differential evidence country and have not been in the UK for 12 months or more, you must provide specified financial documents showing you have the required funds for your course fees and living costs.
+
+**Summary**
+
+| Situation | Must submit financial evidence? |
+|---|---|
+| National of a differential evidence country | No (but must still meet the requirement) |
+| In the UK with valid permission for 12+ months | No (but must still meet the requirement) |
+| All other applicants | Yes |
+
+If you are unsure whether you qualify for an exemption, you should check the current Home Office list of differential evidence countries or seek professional advice before applying.",,2,2,2
+Q07,Do all Student visa applicants need to provide financial evidence?,RAG,"No, not all Student visa applicants need to provide financial evidence at the time of application.
+
+According to the provided sources, you may need to provide proof you have enough money to support yourself and pay for your course, but this will vary depending on your circumstances. The guidance states:
+
+- “You may also need to provide: proof you have enough money to support yourself and pay for your course - this will vary depending on your circumstances” (Source 3)
+- “If you do need to provide it, you’ll be contacted by UK Visas and Immigration (UKVI) after you’ve submitted your application.” (Source 1 and Source 2)
+
+For detailed guidance on whether you personally need to provide financial evidence, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/student-visa/print | https://www.gov.uk/student-visa/money | https://www.gov.uk/student-visa/documents-you-must-provide?step-by-step-nav=cafcc40a-c1ff-4997-adb4-2fef47af194d | https://www.gov.uk/uk-family-visa/child,1,2,1
+Q08,I have already paid part of my university tuition fee. How does this affect the amount of money I need to show for my Student visa?,LLM-only,"As a UK immigration advisor, I can confirm that any tuition fee payments you have already made to your university **can be deducted** from the total amount of money you need to show for your Student visa maintenance (financial) requirement.
+
+Here is how it works in practice:
+
+### 1. Tuition fees
+- You must show that you have enough money to cover **the outstanding balance** of your first year's tuition fees (or the entire course fees if your course is less than one year).
+- If you have already paid a portion of your fees, the amount you have paid can be **offset** against the total tuition fee amount.
+- **Evidence required:** You must provide a **receipt or official letter from your university** confirming:
+  - The total tuition fee for the first year (or full course if shorter);
+  - The amount you have already paid;
+  - The outstanding balance (if any);
+  - The date the payment was received.
+
+The letter must be on official university letterhead and clearly state that the payment has been received by the institution.
+
+### 2. Living costs (maintenance)
+- Your tuition fee payment **does not** reduce the amount you need to show for living costs.
+- You must still demonstrate the full maintenance requirement:
+  - **£1,334 per month** (for up to 9 months) if studying in London;
+  - **£1,023 per month** (for up to 9 months) if studying outside London.
+- This is a fixed amount and is not affected by any tuition fee payments.
+
+### Example
+If your first year's tuition fee is £15,000 and you have already paid £5,000:
+- You need to show **£10,000** for outstanding tuition fees, **plus**
+- The full maintenance amount (e.g., £9,207 if studying outside London for a course of 9 months or longer).
+
+### Important notes
+- The money you show must have been held in your account (or your parent's/legal guardian's account) for **at least 28 consecutive days** ending no more than 31 days before your application date.
+- If you are using a parent's account, you will also need to provide proof of your relationship and consent.
+- If you are a **low-risk national** or applying from certain countries, you may not need to provide financial evidence with your application, but you should still ensure you meet the requirement in case you are asked.
+
+Would you like guidance on the specific documents you need to provide for the tuition fee payment evidence?",,1,2,2
+Q08,I have already paid part of my university tuition fee. How does this affect the amount of money I need to show for my Student visa?,RAG,"Based on the provided context, if you have already paid all or part of your course fees to your student sponsor, this can reduce the amount of money you need to show for your Student visa.
+
+According to **Source 3** (Immigration Rules):
+
+> ""ST 12.5. If the applicant has paid all or part of their course fees to their student sponsor this must be confirmed on the Confirmation of Acceptance for Studies, or the applicant must provide a receipt issued by the student sponsor confirming the amount of fees paid.""
+
+This means the amount you have already paid can be offset against the total course fees you are required to show. The payment must be evidenced either on your CAS or by providing a receipt from your university or college.
+
+Additionally, **Source 1** confirms that you need enough money to pay for your course for 1 academic year (up to 9 months), and the amount will be stated on your CAS. If you have already paid part of the fees, the remaining amount you need to demonstrate would be reduced accordingly, provided the payment is properly documented as described above.
+
+For detailed guidance on how to evidence fee payments, please check the official UK government website or consult your university's international student adviser.",https://www.gov.uk/student-visa/money | https://www.gov.uk/student-finance/continuing-fulltime-students?step-by-step-nav=18045f76-ac04-41b7-b147-5687d8fbb64a | immigration_data\immigration_rules_full_20260630.pdf | https://www.gov.uk/student-finance/parttime-students?step-by-step-nav=18045f76-ac04-41b7-b147-5687d8fbb64a,2,2,2
+Q09,What salary do I normally need to qualify for a Skilled Worker visa?,LLM-only,"For a UK Skilled Worker visa, you normally need to be paid at least **£38,700 per year** (gross), or the **“going rate” for your specific occupation code**, whichever is **higher**.
+
+This is the standard threshold for most applicants applying from 4 April 2024 onwards.
+
+There are some important exceptions and reductions, including:
+
+- **New entrants** (e.g. under 26, switching from a Student visa, or in post-doctoral roles): the threshold is usually **£30,960 per year** or 70% of the going rate, whichever is higher.
+- **Shortage occupation / Immigration Salary List roles**: the threshold is usually **£30,960 per year** or 80% of the going rate, whichever is higher.
+- **Health and care sector roles**: different, generally lower thresholds apply.
+- **PhD holders**: the general threshold can be reduced to **£34,830** (relevant PhD) or **£36,300** (STEM PhD), subject to the going rate.
+
+The salary must be for a genuine job offer from a licensed sponsor, and you must be paid at or above both the general threshold and the specific going rate for your occupation code.
+
+If you tell me the occupation or SOC code, I can check the specific going rate for you.",,0,2,2
+Q09,What salary do I normally need to qualify for a Skilled Worker visa?,RAG,"Based on the provided context, you normally need to be paid at least the minimum salary rate for the type of work you’ll be doing. The minimum salary is whichever is the highest of:
+
+- £41,700 per year
+- the ‘going rate’ for the type of work you’ll be doing
+
+This is stated in Source 2 and Source 3.
+
+The minimum salary may be lower if you’re extending your Skilled Worker visa, updating it because you have a new job or employer, or switching to this visa to become a prison officer (Source 2, Source 3).
+
+Additionally, if your job is on the Immigration Salary List, you must be paid at least either £33,400 per year or the ‘standard going rate’ for the type of work you’ll be doing (Source 4).",https://www.gov.uk/skilled-worker-visa/when-you-can-be-paid-less | https://www.gov.uk/skilled-worker-visa/your-job | https://www.gov.uk/skilled-worker-visa/print | https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/print,2,2,2
+Q10,Does any job offer from a UK company allow me to apply for a Skilled Worker visa?,LLM-only,"No, not any job offer from a UK company allows you to apply for a Skilled Worker visa. The job offer must meet several specific requirements:
+
+**Key requirements:**
+
+1. **Licensed sponsor** – The employer must hold a valid Skilled Worker sponsor licence from the Home Office.
+
+2. **Eligible occupation** – The job must be in an occupation code listed on the Home Office's eligible occupations list (Appendix Skilled Occupations). Not all jobs qualify.
+
+3. **Skill level** – The role must be at RQF Level 3 or above (roughly A-level equivalent or higher).
+
+4. **Minimum salary** – You must be paid at least the general salary threshold (currently £38,700 per year) or the ""going rate"" for the specific occupation, whichever is higher. Some exceptions apply (e.g., new entrants, shortage occupations, certain health/education roles).
+
+5. **Certificate of Sponsorship (CoS)** – The employer must assign you a valid Certificate of Sponsorship.
+
+6. **English language** – You must prove your English ability (usually B1 level or above).
+
+7. **Maintenance funds** – You must show you have enough savings to support yourself unless your sponsor certifies maintenance.
+
+So while a job offer is a necessary first step, it is not sufficient on its own. The employer, the role, and the salary must all meet the Home Office's criteria.",,1,2,2
+Q10,Does any job offer from a UK company allow me to apply for a Skilled Worker visa?,RAG,"No, not any job offer from a UK company allows you to apply for a Skilled Worker visa.
+
+According to the official guidance, to qualify you must:
+
+- work for a UK employer that’s been approved by the Home Office
+- have a ‘certificate of sponsorship’ from your employer with information about the role you’ve been offered
+- do a job that’s on the list of eligible occupations
+- be paid a minimum salary, which depends on the type of work and the date you got your certificate of sponsorship
+
+Source: https://www.gov.uk/skilled-worker-visa and https://www.gov.uk/skilled-worker-visa/your-job
+
+In addition, the employer must be an approved sponsor. If your employer is not currently approved, they can apply for a sponsor licence if they are eligible.
+
+Source: https://www.gov.uk/skilled-worker-visa/print",https://www.gov.uk/skilled-worker-visa | https://www.gov.uk/skilled-worker-visa/print | https://www.gov.uk/skilled-worker-visa/your-job,2,2,2
+Q11,How much money do I need to pay and have available when applying for a Skilled Worker visa?,LLM-only,"As a UK immigration adviser, I can give you a clear breakdown of the costs and funds you need for a Skilled Worker visa application. The exact amount depends on your personal circumstances, but here are the key figures.
+
+---
+
+### 1. Application fee
+
+This depends on:
+
+- whether you are applying from inside or outside the UK
+- the length of your visa
+- whether your job is on the Immigration Salary List or a shortage occupation
+
+**Standard fees from outside the UK:**
+
+| Length of visa | Standard fee |
+|----------------|--------------|
+| Up to 3 years | £719 |
+| More than 3 years | £1,420 |
+
+**Standard fees from inside the UK:**
+
+| Length of visa | Standard fee |
+|----------------|--------------|
+| Up to 3 years | £827 |
+| More than 3 years | £1,636 |
+
+**Shortage occupation / Immigration Salary List roles:**
+
+| Length of visa | Outside UK | Inside UK |
+|----------------|------------|-----------|
+| Up to 3 years | £551 | £551 |
+| More than 3 years | £1,084 | £1,084 |
+
+---
+
+### 2. Immigration Health Surcharge
+
+You must pay the Immigration Health Surcharge as part of the application.
+
+The rate is **£1,035 per year** for most Skilled Worker applicants.
+
+- If your visa is for 3 years, you pay £3,105.
+- If your visa is for 5 years, you pay £5,175.
+
+The surcharge is paid upfront for the full length of the visa.
+
+---
+
+### 3. Maintenance funds
+
+You must show you have enough money to support yourself when you arrive in the UK.
+
+The requirement is:
+
+- **£1,270** available in your bank account for at least 28 consecutive days before you apply.
+
+This requirement is waived if:
+
+- you have been in the UK on a valid visa for at least 12 months, or
+- your sponsor is an A-rated licensed sponsor and certifies maintenance on your Certificate of Sponsorship.
+
+---
+
+### 4. Biometric enrolment fee
+
+You will usually need to provide biometric information.
+
+- Many applicants can use the UK Immigration: ID Check app at no extra cost.
+- If you attend a biometric appointment, there may be a fee, typically around **£20–£140** depending on the service and location.
+
+---
+
+### 5. Optional priority services
+
+If you want a faster decision:
+
+- **Priority service:** around £500
+- **Super priority service:** around £1,000
+
+These are optional and availability varies.
+
+---
+
+### Example total for a 3-year Skilled Worker visa from outside the UK
+
+| Item | Cost |
+|------|------|
+| Application fee | £719 |
+| Immigration Health Surcharge | £3,105 |
+| Maintenance funds | £1,270 |
+| **Total payable to UKVI** | **£3,824** |
+| **Total including funds you must hold** | **£5,094** |
+
+---
+
+### Important notes
+
+- The maintenance funds are not paid to the Home Office; they must simply be available in your account.
+- If you are applying with dependants, you will need to pay additional fees and health surcharges for each dependant, and show additional maintenance funds.
+- Fees are subject to change, so always check the official GOV.UK Skilled Worker visa page before applying.
+
+Would you like me to calculate the costs for your specific situation, including dependants or a different visa length?",,1,2,2
+Q11,How much money do I need to pay and have available when applying for a Skilled Worker visa?,RAG,"Based on the provided context, when you apply for a Skilled Worker visa, you’ll need to have enough money to:
+
+- **Pay the application fee** – the standard fee ranges from **£819 to £1,865** depending on your circumstances.  
+- **Pay the healthcare surcharge** – this is usually **£1,035 per year**.  
+- **Support yourself when you arrive in the UK** – you’ll usually need to have at least **£1,270 available** (unless you’re exempt).  
+
+You’ll pay a lower application fee if your job is on the immigration salary list. You’ll be told how much you need to pay when you apply.
+
+This information is stated in both Source 1 and Source 2 from the official UK government website.",https://www.gov.uk/skilled-worker-visa/how-much-it-costs | https://www.gov.uk/skilled-worker-visa/print | https://www.gov.uk/skilled-worker-visa/when-you-can-be-paid-less | https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/print,2,2,2
+Q12,My occupation is on the Immigration Salary List. Does that change the salary requirement for my Skilled Worker visa?,LLM-only,"Yes, it can. If your occupation code is on the Immigration Salary List (ISL), you may be able to be sponsored under the Skilled Worker route with a lower general salary threshold and/or a lower going rate than would otherwise apply.
+
+The key points are:
+
+- **General threshold reduction:** The standard general salary threshold is £38,700 per year. If your job is on the ISL, the general threshold is reduced to £30,960 per year (or the hourly equivalent).
+
+- **Going rate reduction:** The “going rate” for the occupation is also reduced. For ISL occupations, the going rate is set at 90% of the standard going rate for that occupation code, rather than 100%.
+
+- **You must still be paid the higher of the two:** You need to be paid at least the higher of:
+  - the reduced general threshold (£30,960), or
+  - 90% of the going rate for your specific occupation code, or
+  - the hourly rate floor, currently £11.90 per hour.
+
+- **New entrants:** If you qualify as a new entrant, the salary requirements are lower again, and ISL status can still be relevant, but the new entrant discount and ISL discount are not simply stacked in all cases—you need to check the specific figures for your occupation code.
+
+- **Health and Care Worker visas:** If you are applying under the Health and Care Worker visa, different, lower thresholds apply, and the ISL may not be the relevant factor.
+
+- **Transitional arrangements:** If you were already sponsored under the Skilled Worker route before 4 April 2024 and are extending or changing employer, transitional lower thresholds may apply, which can be more generous than the ISL reduction in some cases.
+
+You should check the exact going rate for your specific occupation code in the relevant Appendix Skilled Occupations table, because the final required salary depends on your individual SOC code, not just the fact that it is on the ISL.",,0,2,2
+Q12,My occupation is on the Immigration Salary List. Does that change the salary requirement for my Skilled Worker visa?,RAG,"Yes. If your job is on the Immigration Salary List, you can be paid less than the standard Skilled Worker salary requirement.
+
+According to Source 2, “There is a lower salary threshold if you have a job on the list for the Skilled Worker visa and the Health and Care Worker visa.”
+
+Source 1 also confirms that you might still be able to apply if your salary is less than the standard requirement of £41,700 or your job’s standard going rate, provided your job is eligible.
+
+For the specific lower threshold that applies to your occupation, you should check the Immigration Salary List table for your SOC code and the relevant part of the UK, as inclusion can vary by area and may have a removal date.",https://www.gov.uk/skilled-worker-visa/when-you-can-be-paid-less | https://www.gov.uk/government/publications/skilled-worker-visa-immigration-salary-list | immigration_data\immigration_rules_full_20260630.pdf,2,2,2
+Q13,How long can I normally stay in the UK with a Standard Visitor visa?,LLM-only,"Under a Standard Visitor visa, you can normally stay in the UK for up to **6 months per visit**.
+
+In certain specific circumstances, you may be able to stay for longer if you are visiting:
+
+- **For private medical treatment** – up to **11 months**
+- **As an academic** – up to **12 months** (if you meet the relevant eligibility requirements)
+
+However, for most standard visits (tourism, visiting family/friends, business meetings, etc.), the maximum permitted stay is **6 months**.
+
+You should also check the validity period of your visa and any conditions attached to it, as the exact dates you are allowed to enter and remain will be stated on your visa vignette or decision letter.",,2,2,2
+Q13,How long can I normally stay in the UK with a Standard Visitor visa?,RAG,"Based on the provided context, you can normally stay in the UK for **up to 6 months** on a Standard Visitor visa.
+
+- **Source 1** states: ""You can usually stay in the UK for up to 6 months.""
+- **Source 2** states: ""You can stay for a maximum of 6 months on each visit and your visa can last for 2, 5 or 10 years.""
+- **Source 3** states: ""This visa lasts 2, 5 or 10 years. You can stay for a maximum of 6 months on each visit.""
+- **Source 4** states: ""A Standard Visitor may apply for a visit visa of six months, two, five or 10 years validity, however each stay in the UK must not exceed the permitted length of stay endorsed on the visit visa (usually six months).""
+
+In certain circumstances, you might be able to apply to stay for longer — for example, to get medical treatment — but the standard maximum stay is 6 months per visit.",https://www.gov.uk/standard-visitor | https://www.gov.uk/transit-visa/visitor-in-transit-visa | https://www.gov.uk/standard-visitor/apply-standard-visitor-visa | immigration_data\immigration_rules_full_20260630.pdf,2,2,2
+Q14,"If I have a 5-year Standard Visitor visa, can I stay in the UK continuously for five years?",LLM-only,"No, you cannot. A Standard Visitor visa—even if it is valid for 5 years—does **not** allow you to stay in the UK continuously for five years.
+
+The key points are:
+
+- **Maximum stay per visit:** You can normally stay for a maximum of **6 months per visit**.
+- **Not for long-term residence:** The Standard Visitor route is for temporary visits only (tourism, visiting family/friends, short business trips, etc.). You must not use repeated or successive visits to live in the UK for extended periods.
+- **No right to reside:** Holding a 5-year visit visa does not give you any right to reside, work, study long-term, or settle in the UK.
+- **Border scrutiny:** Even with a valid multi-year visa, Border Force officers can question you at the border. If they believe you are effectively trying to live in the UK through frequent or successive visits, they can refuse you entry or curtail your visa.
+- **General expectation:** You should spend the majority of your time outside the UK and be able to demonstrate genuine visitor intentions on each entry.
+
+In short: the 5-year validity simply means you can use the visa for multiple short visits over five years, not that you can remain in the UK for the whole period.",,2,2,2
+Q14,"If I have a 5-year Standard Visitor visa, can I stay in the UK continuously for five years?",RAG,"No, you cannot stay continuously for five years. According to the official guidance, a long-term Standard Visitor visa (including the 5-year option) allows you to stay for a **maximum of 6 months on each visit** (Source 1 and Source 2). Additionally, your visa may be cancelled if your travel history shows you are repeatedly living in the UK for extended periods (Source 1).",https://www.gov.uk/standard-visitor/apply-standard-visitor-visa | https://www.gov.uk/transit-visa/visitor-in-transit-visa,2,2,2
+Q15,How early can I apply for a Standard Visitor visa before travelling to the UK?,LLM-only,"For a Standard Visitor visa, you can apply **up to 3 months before your intended date of travel** to the UK.
+
+The key points to note:
+
+- **Earliest application date:** 3 months before your planned travel date
+- **Latest application date:** You should apply at least 3 weeks before you intend to travel, though this is a guideline rather than a strict rule
+- **Processing time:** Standard processing typically takes around 3 weeks from your biometric appointment, though this can vary by country and time of year
+
+**Important considerations:**
+
+- You should not book non-refundable travel or accommodation before your visa is granted
+- The visa start date (the ""valid from"" date) will generally be the date your visa is issued, or a date you specify in your application (within the 3-month window)
+- You can request a later start date on your application form if you're applying early but don't plan to travel immediately
+
+If you apply more than 3 months before your travel date, your application may be refused or you may be asked to reapply at the correct time.",,2,2,2
+Q15,How early can I apply for a Standard Visitor visa before travelling to the UK?,RAG,"According to the official UK government guidance, the earliest you can apply for a Standard Visitor visa is **3 months before you travel**.
+
+This is stated in multiple sources:
+
+- **Source 1** (gov.uk/standard-visitor/apply-standard-visitor-visa): “The earliest you can apply is 3 months before you travel.”
+- **Source 2** (gov.uk/standard-visitor): “The earliest you can apply is 3 months before you travel.”
+- **Source 3** (gov.uk/standard-visitor): “The earliest you can apply is 3 months before you travel.”
+
+You must apply online before you travel to the UK and attend an appointment at a visa application centre.",https://www.gov.uk/standard-visitor/apply-standard-visitor-visa | https://www.gov.uk/standard-visitor?step-by-step-nav=e8254fb0-f2d9-45b1-bdc4-d17cbba11bef | https://www.gov.uk/standard-visitor | immigration_data\immigration_rules_full_20260630.pdf,2,2,2
+Q16,"After living in the UK on a Skilled Worker visa, when can I apply for indefinite leave to remain?",LLM-only,"As a Skilled Worker, you can generally apply for indefinite leave to remain (ILR) after **5 continuous years** in the UK on this route.
+
+However, you must also meet all the other eligibility requirements at the time of application, including:
+
+- **Continuous residence** – you must not have been outside the UK for more than 180 days in any 12-month period during the qualifying period.
+- **Current employer sponsorship** – your employer must confirm they still need you for the foreseeable future.
+- **Salary threshold** – you must be paid at least the general salary threshold (currently £38,700 per year, or the going rate for your occupation, whichever is higher), unless an exemption applies.
+- **Knowledge of Life in the UK** – you must pass the Life in the UK test.
+- **English language** – you must meet the English language requirement (usually at B1 level or above).
+
+Time spent on other qualifying routes (such as a Global Talent visa, Scale-up visa, or in some cases a dependant visa) may count toward the 5-year period, but time on a Student visa or Graduate visa does not.
+
+If you have any specific concerns about absences, salary, or combining time on different visas, it is worth checking the detailed Home Office guidance or seeking professional advice before applying.",,1,2,2
+Q16,"After living in the UK on a Skilled Worker visa, when can I apply for indefinite leave to remain?",RAG,"Based on the provided context, the specific timing requirement (for example, the continuous residence period, usually 5 years) is not quoted in the sources you supplied.
+
+However, the context does confirm that indefinite leave to remain is available for Skilled Worker visa holders, and that family members can apply with you or separately:
+
+- “You can include your partner and children on your application if they’re eligible.”
+- “Your partner and children can apply separately at a later date, for example if they’re not eligible yet.”
+- “They can continue to extend their visa as your Skilled Worker, Health and Care Worker or T2 dependant, even after you get indefinite leave to remain”
+
+For detailed guidance on the exact qualifying period and requirements, please check the official UK government website or speak to a professional immigration adviser.",https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa | https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/family-members | immigration_data\immigration_rules_full_20260630.pdf,2,1,1
+Q17,Do I still need to meet a salary requirement when applying for indefinite leave to remain as a Skilled Worker?,LLM-only,"Yes, you still need to meet a salary requirement when applying for indefinite leave to remain (ILR) as a Skilled Worker, unless you fall within a specific exemption.
+
+As of the current Immigration Rules (and following the changes introduced on 4 April 2024), the general salary threshold for ILR as a Skilled Worker is **£38,700 per year** (gross), or the **going rate for your specific occupation code**, whichever is higher.
+
+However, there are important nuances and transitional arrangements:
+
+### 1. If you were already in the Skilled Worker route before 4 April 2024
+If you held a Skilled Worker (or Tier 2 General) visa before 4 April 2024 and have remained in this route continuously since then, you may benefit from transitional protection. In that case, the salary requirement for ILR is the higher of:
+
+- **£29,000 per year** (gross), or
+- The **going rate for your occupation code** as set out in the pre-4 April 2024 rules, or
+- The **reduced going rate** if you are a new entrant (though this is less common for ILR applicants).
+
+This transitional rate is expected to remain in place for those who were already in the route before the April 2024 changes, even if they apply for ILR after that date.
+
+### 2. Health and Care Worker visa holders
+If you are on a Health and Care Worker visa, the salary threshold for ILR is based on the **national pay scale for your specific role** (e.g., Agenda for Change banding in the NHS), not the general £38,700 threshold. You must still be paid at least the appropriate rate for your job.
+
+### 3. Occupation-specific “going rates”
+For all applicants, the salary must also meet the **going rate** for the specific SOC (Standard Occupational Classification) code under which you are sponsored. The going rate is based on a 37.5-hour week; if you work fewer or more hours, the salary is pro-rated accordingly.
+
+### 4. Allowances and what counts as salary
+Only **basic gross salary** (guaranteed) counts towards the threshold. Allowances such as overtime, bonuses, and employer pension contributions do not count, unless they are guaranteed and specified in your Certificate of Sponsorship.
+
+### 5. Evidence required
+When you apply for ILR, your employer must provide a letter confirming:
+
+- That you are still required for the job,
+- Your current salary,
+- That the salary meets or exceeds the appropriate threshold, and
+- That you will be paid this for the foreseeable future.
+
+You will also need to provide recent payslips and bank statements to evidence your earnings.
+
+### Summary
+- **General threshold (post-4 April 2024 new entrants):** £38,700 or going rate, whichever is higher.
+- **Transitional threshold (pre-4 April 2024 visa holders):** £29,000 or going rate, whichever is higher.
+- **Health and Care Worker visa:** National pay scale for the role.
+- **Always check the going rate for your SOC code**, as it may be higher than the general threshold.
+
+If you are unsure which threshold applies to you, it is advisable to check the specific going rate for your occupation code in the current Immigration Rules Appendix Skilled Occupations, and to confirm with your sponsor that your salary meets the requirement before applying.",,1,2,2
+Q17,Do I still need to meet a salary requirement when applying for indefinite leave to remain as a Skilled Worker?,RAG,"Based on the provided context, yes, you must meet the salary requirements when applying for indefinite leave to remain as a Skilled Worker.
+
+Source 1 states that to be eligible you must:
+
+- “meet the salary requirements”
+- “continue to be needed for your job and meet the salary requirements after you get indefinite leave to remain - you’ll need a document from your employer (sponsor) to confirm this”
+
+Source 3 also indicates that there is a “standard salary requirement of £41,700” for a Skilled Worker visa, though it notes that you might still be able to apply if your salary is less than this in certain circumstances.
+
+For detailed guidance on your specific salary situation, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/settle-in-the-uk/y/you-have-a-work-visa/tier-2-general-visa | https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/family-members | https://www.gov.uk/skilled-worker-visa/when-you-can-be-paid-less | immigration_data\immigration_rules_full_20260630.pdf,2,2,2
+Q18,I have spent some time outside the UK while holding a Skilled Worker visa. Could this affect my application for settlement?,LLM-only,"Yes, it could. Time spent outside the UK can affect a Skilled Worker settlement (indefinite leave to remain) application in two main ways: the **continuous residence requirement** and the **absences limit**.
+
+### 1. The 180-day absence rule
+Under Appendix Skilled Worker, you must not have been outside the UK for more than **180 days in any rolling 12-month period** during your qualifying period. The Home Office counts this on a rolling basis, not calendar years.
+
+Key points:
+- The limit applies to the whole qualifying period relied upon for settlement.
+- Absences are counted as whole days outside the UK. The day of departure and day of arrival are generally **not** counted as absences because you are treated as being in the UK for part of those days.
+- The 180-day limit applies to any reason for absence, including annual leave, business travel, or family reasons, unless a specific exception applies.
+
+### 2. Continuous residence
+You must show continuous residence in the UK. Excessive or repeated absences can raise questions about whether your residence has been continuous, even if each individual absence is under 180 days.
+
+### 3. Exceptions
+There are limited exceptions where absences over 180 days may be disregarded, for example:
+- travel disruption due to pandemic, natural disaster, or conflict
+- serious illness or injury of the applicant or a close family member
+- compelling occupational or compassionate reasons, where evidence is provided
+- some absences for research or work directly related to the sponsored employment, if evidenced
+
+These are assessed case-by-case and require strong supporting evidence.
+
+### 4. Other practical points
+- Keep records of all travel dates, reasons, and evidence.
+- If you were working remotely from abroad for your sponsor, this is generally permitted for short periods, but long or frequent remote working abroad can raise concerns about whether the role is genuinely based in the UK.
+- Absences do not “reset” the qualifying period unless continuous residence is broken.
+
+### What you should do now
+- Calculate all absences carefully using the rolling 12-month method.
+- If any 12-month period exceeds 180 days, consider whether an exception may apply and gather evidence.
+- If you are close to the limit, you may wish to delay applying until the relevant absence falls outside the rolling period, if that is possible.
+
+If you tell me the dates and lengths of your absences, I can help you assess whether they are likely to cause a problem.",,2,2,2
+Q18,I have spent some time outside the UK while holding a Skilled Worker visa. Could this affect my application for settlement?,RAG,"Based on the provided context, time outside the UK can affect a settlement application.
+
+For Skilled Worker settlement, the Immigration Rules state that the applicant must have spent a continuous period of 5 years in the UK (SW 21.1, Source 4).
+
+Source 1, which covers settlement for work visas including Skilled Worker, states:
+
+> “Time outside the UK: You must have spent no more than 180 days outside the UK in any 12 months. If you think you’re affected by this rule, find out how to calculate your time in the UK (‘continuous residence’).”
+
+So, if you have spent more than 180 days outside the UK in any 12-month period while on a Skilled Worker visa, this could break your continuous residence and affect your eligibility for settlement.
+
+For detailed guidance on calculating continuous residence and how absences are treated, you should check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/settle-in-the-uk/y/you-have-a-work-visa/tier-1-entrepreneur-visa | https://www.gov.uk/government/publications/indefinite-leave-to-remain-calculating-continuous-period-in-uk | immigration_data\immigration_rules_full_20260630.pdf,2,2,2
+Q19,I already have a Skilled Worker visa but want to change to a different employer. Do I need to do anything to my visa?,LLM-only,"Yes, you will need to apply to update your Skilled Worker visa before you can start working for the new employer.
+
+Specifically, you must submit a new Skilled Worker application (often referred to as a ""change of employment"" application) from within the UK. You cannot simply transfer the visa.
+
+Here are the key points you need to know:
+
+**1. You need a new Certificate of Sponsorship (CoS)**
+Your new employer must be a licensed Home Office sponsor. They will need to assign a new Certificate of Sponsorship (CoS) to you for the new role. The job must meet the current Skilled Worker eligibility requirements (skill level and salary threshold).
+
+**2. Apply before you start the new job**
+You must submit your new application and receive approval *before* you begin working for the new employer. You cannot start the new job while the application is pending.
+
+**3. You can only work for your current employer while the application is pending**
+While your new application is being processed, you must continue working only for your current (old) employer under the terms of your existing visa. You cannot hand in your notice and start the new role until the new visa is granted.
+
+**4. Application requirements**
+You will need to meet the current Skilled Worker requirements, including:
+- A valid CoS from the new employer
+- The appropriate salary for the role (at least the general threshold or the going rate for the occupation, whichever is higher)
+- English language requirement (you may be able to rely on your previous evidence if it is still valid)
+- Maintenance funds (unless your new sponsor is willing to certify maintenance on the CoS, which most do)
+
+**5. Immigration Skills Charge and fees**
+Your new employer will likely need to pay the Immigration Skills Charge and the CoS fee. You will need to pay the visa application fee and the Immigration Health Surcharge (IHS) again for the new period of leave.
+
+**6. Time spent on the new visa counts towards settlement**
+Time spent on your current Skilled Worker visa and the new one can be combined towards the 5-year continuous residence requirement for Indefinite Leave to Remain (ILR), provided there is no break in your lawful residence.
+
+**7. If you are switching from a Skilled Worker visa to a different route**
+If you are changing to a different type of visa (e.g., a Health and Care Worker visa or a Global Business Mobility visa), the rules may differ slightly, but the principle is the same: you must apply for and be granted the new visa before starting the new job.
+
+**In summary:** Yes, you must apply for a new Skilled Worker visa (change of employment) from within the UK, with a new CoS from your new employer, and you must wait for approval before starting the new role.
+
+Would you like more detail on any of these points, such as the current salary thresholds or the application process itself?",,1,2,2
+Q19,I already have a Skilled Worker visa but want to change to a different employer. Do I need to do anything to my visa?,RAG,"Yes, you need to apply to update your Skilled Worker visa if you want to change to a different employer.
+
+According to Source 1 (https://www.gov.uk/skilled-worker-visa/update-your-visa-if-you-change-job-or-employer):
+
+“You’ll need to apply to update your Skilled Worker or Tier 2 (General) work visa if: you want to change your job and your new job is with a different employer”
+
+Source 3 (https://www.gov.uk/skilled-worker-visa) also confirms that you cannot “change jobs or employer unless you apply to update your visa.”",https://www.gov.uk/skilled-worker-visa/update-your-visa-if-you-change-job-or-employer | https://www.gov.uk/skilled-worker-visa/switch-to-this-visa | https://www.gov.uk/skilled-worker-visa | https://www.gov.uk/skilled-worker-visa/your-job,2,2,2
+Q20,I am currently studying in the UK and have received a job offer. Can I switch from a Student visa to a Skilled Worker visa?,LLM-only,"Yes, you can switch from a Student visa to a Skilled Worker visa from within the UK, provided you meet the eligibility requirements. You do not need to leave the UK and apply from your home country.
+
+**Key requirements:**
+
+1. **Job offer from a licensed sponsor** – Your employer must hold a valid Skilled Worker sponsor licence and issue you a valid Certificate of Sponsorship (CoS).
+
+2. **Skill level** – The job must be at RQF Level 3 or above (A-level equivalent or higher).
+
+3. **Salary threshold** – You must meet the general salary threshold (currently £38,700 per year) or the going rate for the occupation, whichever is higher — unless you qualify for the “new entrant” rate.
+
+4. **New entrant discount** – As a Student visa holder switching in the UK, you will likely qualify as a “new entrant,” which reduces the salary threshold to £30,960 per year or 70% of the going rate for the occupation, whichever is higher. To qualify as a new entrant, you must have completed (or be applying no more than 2 years after completing) a UK bachelor’s degree, master’s degree, PhD, or other eligible qualification — or be under 26 at the time of application.
+
+5. **English language** – You must prove your English ability. Having completed a UK degree satisfies this requirement.
+
+6. **Financial requirement** – You must have at least £1,270 in available funds for 28 consecutive days, unless your sponsor certifies maintenance on your CoS.
+
+**Important timing note:** You can apply to switch up to 3 months before your course completion date, but you cannot start work until you have submitted your Skilled Worker application and your Student visa conditions allow it (or once your new visa is granted, if earlier).
+
+Would you like guidance on the application process, fees, or timelines?",,1,2,2
+Q20,I am currently studying in the UK and have received a job offer. Can I switch from a Student visa to a Skilled Worker visa?,RAG,"Based on the provided context, the sources do not give specific details about switching from a Student visa to a Skilled Worker visa. However, Source 4 states:
+
+> ""If you are on a Student visa that is due to expire you can apply to extend your permission, switch to a Graduate visa, or switch to another type of visa if you meet the Immigration Rules.""
+
+This suggests that switching from a Student visa to another visa type, such as a Skilled Worker visa, may be possible if you meet the requirements of that route.
+
+For detailed guidance on the Skilled Worker visa, including eligibility, fees, and how to switch, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/uk-expansion-worker-visa/switch | https://www.gov.uk/secondment-worker-visa/switch-to-this-visa | https://www.gov.uk/entering-staying-uk | https://www.gov.uk/guidance/ukrainian-nationals-in-the-uk-visa-support,2,2,1
+Q21,What documents and information do I need when applying to visit the UK as a tourist?,LLM-only,"As a UK immigration adviser, I can outline the key requirements for a Standard Visitor visa application (for tourism). The exact documents depend on your nationality and circumstances, but generally you will need:
+
+## Core Requirements
+
+**1. Valid Passport**
+- Must be valid for the entire duration of your stay
+- Should have at least one blank page for the visa vignette
+
+**2. Completed Online Application Form**
+- Submitted via the UK Visas and Immigration (UKVI) website
+- Visa fee payment confirmation
+
+**3. Biometric Information**
+- Fingerprints and photograph taken at a Visa Application Centre
+- Appointment confirmation letter
+
+## Supporting Documents
+
+**Proof of Financial Means**
+- Recent bank statements (typically 3–6 months)
+- Payslips or proof of regular income
+- Evidence of savings or investments
+- If sponsored: sponsor's bank statements and a sponsorship letter
+
+**Proof of Employment/Studies**
+- Employment letter confirming your role, salary, and approved leave
+- If self-employed: business registration documents, tax returns
+- If a student: enrolment letter from your institution
+
+**Accommodation Details**
+- Hotel bookings or
+- Invitation letter from host with their address and immigration status in the UK
+
+**Travel Itinerary**
+- Flight bookings (return tickets recommended)
+- Planned activities or tour bookings (optional but helpful)
+
+**Ties to Home Country**
+- Property ownership documents or tenancy agreements
+- Family ties (marriage certificate, children's birth certificates)
+- Evidence of ongoing commitments (e.g., return to work/study)
+
+**Previous Travel History**
+- Copies of previous visas and entry/exit stamps (if applicable)
+
+## Key Points to Remember
+
+- **All documents not in English or Welsh** must be accompanied by a certified translation
+- **Do not submit false documents** — this leads to a 10-year ban
+- **You must demonstrate you are a genuine visitor** — you intend to leave the UK at the end of your visit and will not live in the UK for extended periods through frequent visits
+- **You must not intend to work** or access public funds
+
+## Visa Nationals vs Non-Visa Nationals
+
+- **Visa nationals** (e.g., citizens of India, China, Nigeria, etc.) must apply before travel
+- **Non-visa nationals** (e.g., EU/EEA citizens, US, Canada, Australia, etc.) can usually enter as visitors without a visa, though they may still be questioned at the border and should carry similar evidence
+
+Would you like me to clarify anything specific about your situation?",,1,2,2
+Q21,What documents and information do I need when applying to visit the UK as a tourist?,RAG,"Based on the provided context, the documents and information you need depend on the type of application you are making.
+
+For a **Standard Visitor visa** (which covers tourism, holidays, or seeing family or friends), the context does not list a specific document checklist. However, it confirms that you must apply online before you travel, the visa costs **£135 for up to 6 months**, and the earliest you can apply is **3 months before you travel** (Source 3).
+
+More generally, when applying to come to the UK, you will be told exactly what documents and supporting evidence you need as part of the application process. You will also need to provide your **biometric information (fingerprints and photograph)**, usually at a visa application centre (Source 4).
+
+For detailed guidance on the specific documents required for a tourist visit, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/visit-uk-holiday-family-friends | https://www.gov.uk/minister-of-religion-visa/print | https://www.gov.uk/standard-visitor | https://www.gov.uk/apply-to-come-to-the-uk/paying-fees-and-proving-your-identity,2,1,0
+Q22,My partner lives in Britain and I want to stay with them permanently. What route should I look at?,LLM-only,"To give you the most accurate answer, I need a bit more information about your situation. The best route depends on several key factors, including your nationality, your partner’s immigration status, whether you are married or unmarried, and your current location.
+
+Here is a breakdown of the most common routes to look at:
+
+### 1. The Family Visa (Partner Route)
+This is the most common route if your partner is a **British citizen** or **settled in the UK** (e.g., they have Indefinite Leave to Remain, settled status under the EU Settlement Scheme, or refugee status).
+
+**You can apply if you are:**
+-   A spouse (legally married).
+-   A civil partner.
+-   An unmarried partner (you must have been living together in a relationship akin to marriage for at least **2 years**).
+-   A proposed partner (fiancé(e) or proposed civil partner) with proof you will marry within 6 months.
+
+**Key requirements for this route:**
+-   **Financial Requirement:** Your partner (the UK sponsor) generally needs to prove a minimum gross annual income of **£29,000** (this is the current threshold as of April 2024). This can be met through employment, self-employment, savings, or a combination. If you have children who are not British/settled, the threshold is higher.
+-   **Accommodation:** You must show you have adequate accommodation for you and any dependents without relying on public funds.
+-   **English Language:** You must prove your knowledge of English (usually by passing an approved A1 test for the initial visa, or holding a degree taught in English).
+-   **Genuine Relationship:** You must prove your relationship is genuine and subsisting.
+
+### 2. The EU Settlement Scheme (EUSS)
+**This route is only available if your relationship began before 31 December 2020.**
+-   If your partner is an EU, EEA, or Swiss citizen living in the UK with ""Settled"" or ""Pre-Settled"" status, you may be able to apply as a ""Joining Family Member.""
+-   **Deadline:** The deadline for most applications has passed, but late applications are accepted if you have ""reasonable grounds"" for missing the deadline (e.g., you were unaware of the scheme, medical reasons, or you are a new partner joining someone *now* but the relationship started before the cut-off date).
+
+### 3. The Fiancé(e) / Proposed Civil Partner Visa
+If you are currently outside the UK and want to get married *in* the UK:
+-   You apply for a 6-month visa to enter the UK, get married/civil partnered, and then switch to the Spouse Visa from *inside* the UK.
+-   **Note:** You cannot work on a Fiancé(e) visa. You can only work once you have switched to the Spouse Visa.
+
+### 4. The Unmarried Partner Visa (Cohabitation)
+If you are not married but have been living together for 2+ years, you can apply directly for the Unmarried Partner Visa. This gives you the same rights as a Spouse Visa (right to work, access to NHS, etc.) but requires strong documentary evidence of cohabitation (joint leases, bills, bank statements addressed to both of you at the same address).
+
+### 5. Dependants on Other Visas
+If your partner is in the UK on a **Work Visa** (e.g., Skilled Worker, Health and Care Worker) or a **Student Visa**, you may be able to apply as their ""Dependant.""
+-   **Student Visa restrictions:** If your partner is on a Student Visa, you can usually only join them as a dependant if they are studying a postgraduate course (level 7 or above) lasting 9 months or more, or if they are a government-sponsored student.
+
+---
+
+### Next Steps for You
+To narrow this down, I recommend looking at the **UK Government website (GOV.UK)** and searching for the ""Family Visa"" or ""Appendix FM Partner"" guidance.
+
+**If you can answer the following, I can give you a more specific roadmap:**
+
+1.  What is your nationality?
+2.  What is your partner's immigration status in the UK (British Citizen, Settled, Pre-Settled, Work Visa)?
+3.  Are you married, in a civil partnership, or unmarried? If unmarried, how long have you lived together?
+4.  Are you currently inside the UK or outside the UK?
+5.  Does your partner meet the £29,000 income threshold?",,1,2,2
+Q22,My partner lives in Britain and I want to stay with them permanently. What route should I look at?,RAG,"Based on the provided context, if your partner lives in Britain and you want to stay with them permanently, you should look at the **family visa route**, specifically as a **partner**.
+
+The context includes a government page titled **“Indefinite leave to remain if you have family in the UK”** (Source 2), which is the relevant route for settling permanently based on a family relationship.
+
+Additionally, the Immigration Rules excerpt (Source 1) refers to requirements for **indefinite leave to remain as a parent** and mentions that if an applicant does not meet the requirements for indefinite leave as a parent, they may be granted **further limited leave to remain as a partner** for a period not exceeding 30 months. This indicates that the partner route is a recognised path toward settlement.
+
+For detailed guidance on eligibility, the required period of residence, financial requirements, and how to apply, please check the official UK government website at **www.gov.uk** or consult a qualified immigration adviser.",immigration_data\immigration_rules_full_20260630.pdf | https://www.gov.uk/indefinite-leave-to-remain-family | https://www.gov.uk/visas-partner-dies,2,2,2
+Q23,I want to visit my family in Britain for about eight months. Can I just use a normal visitor visa?,LLM-only,"Based on the standard UK Immigration Rules, **a standard Visitor visa normally only allows a maximum stay of 6 months per visit**. An 8-month stay would not be permitted under the ordinary visitor route.
+
+Here are the key points:
+
+- **Standard visit visa limit:** 6 months maximum per visit.
+- **No “long stay” visitor visa for 8 months:** The UK does not offer a general visitor visa that permits an 8-month continuous stay simply to visit family.
+- **Possible alternatives:**
+  - You could consider applying for a visa in a category that allows longer stays, such as a family visa, if you qualify (e.g., spouse/partner, parent, child, or dependent relative of a British citizen or settled person).
+  - You could potentially split your time, but you must be very careful: frequent or successive visits can lead to refusal if the Border Force officer or Entry Clearance Officer believes you are effectively living in the UK through repeated visits.
+
+**Important:** Even if you enter for 6 months, you cannot simply extend as a visitor except in very limited, compelling circumstances (e.g., medical treatment). You also cannot switch from a visitor visa to most other visa categories from inside the UK.
+
+If you provide more details about your nationality, family relationship, and purpose, I can advise more specifically.",,2,2,2
+Q23,I want to visit my family in Britain for about eight months. Can I just use a normal visitor visa?,RAG,"Based on the provided context, a Standard Visitor visa usually allows you to stay in the UK for up to 6 months. Source 3 states that a Standard Visitor may apply for a visit visa of six months, two, five or 10 years validity, however each stay in the UK must not exceed the permitted length of stay endorsed on the visit visa (usually six months). Source 4 also confirms that a Standard Visitor visa allows you to stay in the UK for up to 6 months.
+
+If you want to live with a family member in the UK for more than 6 months, you would normally need a family visa rather than a visitor visa. Source 2 says: “You need a family visa to live with a family member in the UK for more than 6 months.”
+
+For detailed guidance on whether any exception might apply to your situation, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/uk-family-visa?step-by-step-nav=e8254fb0-f2d9-45b1-bdc4-d17cbba11bef | https://www.gov.uk/uk-family-visa | immigration_data\immigration_rules_full_20260630.pdf | https://www.gov.uk/visit-uk-holiday-family-friends,2,2,2
+Q24,"I have been offered a job in the UK with a salary of £40,000 per year. Does that mean I qualify for a Skilled Worker visa?",LLM-only,"A salary of £40,000 may be sufficient for a Skilled Worker visa, but it depends on several factors. Here are the key points to consider:
+
+**General salary threshold**
+
+The general minimum salary threshold for a Skilled Worker visa is currently **£38,700 per year** (as of April 2024). Since your offer of £40,000 exceeds this, you may meet the general threshold.
+
+**Going rate for your occupation**
+
+You must also be paid at least the “going rate” for your specific occupation code (SOC code). If the going rate for your job is higher than £40,000, you would not qualify unless an exception applies. You can check the going rate for your occupation in the Home Office’s Immigration Rules Appendix Skilled Occupations.
+
+**Lower salary thresholds (if applicable)**
+
+You may be able to rely on a lower threshold if you meet certain criteria, such as:
+
+- You are a “new entrant” (e.g., under 26, a recent graduate, or in post-doctoral positions) — the threshold is lower, typically £30,960 per year, and the going rate is reduced to 70%.
+- Your job is on the Immigration Salary List (formerly the Shortage Occupation List) — a lower threshold may apply.
+- You have a PhD relevant to the job — the general threshold can be reduced to £34,830 (or £30,960 for STEM PhDs).
+
+**Other requirements**
+
+Salary is only one part of the Skilled Worker visa requirements. You also need:
+
+- A valid Certificate of Sponsorship (CoS) from a UK employer that holds a valid sponsor licence.
+- A job offer in an eligible occupation.
+- Evidence of English language proficiency (at least CEFR Level B1).
+- Sufficient maintenance funds (unless your sponsor certifies maintenance).
+
+**Next steps**
+
+I would recommend confirming the SOC code for your role and checking the going rate in Appendix Skilled Occupations. If you can share your job title and a brief description of the role, I can help you identify the relevant occupation code and assess whether £40,000 meets the requirements.",,1,2,2
+Q24,"I have been offered a job in the UK with a salary of £40,000 per year. Does that mean I qualify for a Skilled Worker visa?",RAG,"Based on the provided context, a salary of £40,000 per year may not automatically qualify you for a Skilled Worker visa.
+
+According to Source 1 and Source 2, the minimum salary for the type of work you’ll be doing is whichever is the highest of:
+
+- **£41,700 per year**, or
+- the **‘going rate’** for the type of work you’ll be doing
+
+Since £40,000 is below the standard £41,700 threshold, you would not meet the standard salary requirement unless an exception applies.
+
+However, Source 3 notes that you **might still be able to apply** if your job is eligible but your salary is less than the standard requirement of £41,700 or the job’s standard going rate. Source 4 also explains that the salary requirements are different if, for example:
+
+- you work in healthcare or education
+- your job is on the Immigration Salary List
+- you got a certificate of sponsorship for your first Skilled Worker visa before 4 April 2024 and have held Skilled Worker visas since then
+
+For detailed guidance on whether your specific job and salary qualify, please check the official UK government website or consult a professional immigration adviser.",https://www.gov.uk/skilled-worker-visa/print | https://www.gov.uk/skilled-worker-visa/your-job | https://www.gov.uk/skilled-worker-visa/when-you-can-be-paid-less | https://www.gov.uk/indefinite-leave-to-remain-tier-2-t2-skilled-worker-visa/print,2,2,2
+Q25,"I have £12,000 in savings and want to apply for a Student visa. Is that enough?",LLM-only,"To give you a precise answer, I need to know a few details, because the amount you must show depends on **where you will study** and **whether you have paid any accommodation fees already**.
+
+Under the UK Student visa rules, you must show:
+
+1. **Course fees** for the first year (or the whole course if it is less than a year), **minus** any fees you have already paid, **plus**
+2. **Living costs** (“maintenance”), which are:
+   - **£1,334 per month** for courses in London, for up to 9 months
+   - **£1,023 per month** for courses outside London, for up to 9 months
+
+The maximum living-cost requirement is therefore:
+- **London:** £12,006
+- **Outside London:** £9,207
+
+So, if your course is **outside London** and your remaining course fees after any payments are **£2,793 or less**, then £12,000 could be enough.
+
+If your course is **in London**, £12,000 would only just cover the maximum maintenance amount, leaving nothing for course fees—so it would only be enough if your course fees are fully paid or covered by a scholarship/sponsor.
+
+Also note:
+- The money must be held in an acceptable account for **at least 28 consecutive days** before the application date.
+- The closing balance must not have dropped below the required amount during that period.
+- If the funds are in a foreign currency, the Home Office uses the OANDA exchange rate on the date of application.
+
+If you tell me:
+- whether your institution is in London or outside London,
+- your first-year course fees,
+- how much you have already paid toward fees or accommodation,
+
+I can tell you exactly whether £12,000 is sufficient.",,0,2,2
+Q25,"I have £12,000 in savings and want to apply for a Student visa. Is that enough?",RAG,"Based on the provided context, the exact amount of money you need for a Student visa depends on your circumstances, including your course fees and where you will study. The guidance states:
+
+- “You must have enough money to pay for your course and support yourself in the UK. How much money you need depends on your circumstances and what you’re applying for.” (Source 4)
+- You need enough money to cover your course fees for one academic year (up to 9 months), as shown on your Confirmation of Acceptance for Studies (CAS), plus money to support yourself. (Source 4)
+- The funds must be held for at least 28 consecutive days, and the end of that 28-day period must be within 31 days of your application date. (Source 3)
+
+The context does not specify a single fixed savings amount such as £12,000 that applies to all applicants. Whether £12,000 is enough will depend on your CAS course fee and the maintenance requirement for your study location and circumstances.
+
+For detailed guidance tailored to your situation, please check the official UK government student visa finance guidance or speak to your education provider’s international student adviser.",immigration_data\immigration_rules_full_20260630.pdf | https://www.gov.uk/student-visa/print | https://www.gov.uk/student-visa/money,2,2,1

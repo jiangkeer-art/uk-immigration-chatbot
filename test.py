@@ -71,15 +71,12 @@ def main():
     pdf_files = list(Path(DATA_DIR).glob(pdf_pattern))
 
 
-
-    # 按修改时间排序取最新
     html_file = sorted(html_files, key=lambda f: f.stat().st_mtime)[-1] if html_files else None
     pdf_file = sorted(pdf_files, key=lambda f: f.stat().st_mtime)[-1] if pdf_files else None
 
-    print(f"最新的 HTML: {html_file.name if html_file else '无'}")
-    print(f"最新的 PDF : {pdf_file.name if pdf_file else '无'}")
+    print(f"new HTML: {html_file.name if html_file else 'null'}")
+    print(f"new PDF : {pdf_file.name if pdf_file else 'null'}")
 
-    # 3. 加载文档
     all_docs = []
 
     if html_file:
@@ -87,11 +84,10 @@ def main():
             doc = load_html(html_file)
             if doc and doc.page_content:
                 all_docs.append(doc)
-                print(f"HTML 加载成功，内容长度: {len(doc.page_content)} 字符")
             else:
-                print("HTML 加载后内容为空")
+                print("HTML null")
         except Exception as e:
-            print(f"HTML 加载失败: {e}")
+            print(f"HTML load failed: {e}")
             import traceback
             traceback.print_exc()
 
@@ -100,22 +96,16 @@ def main():
             docs = load_pdf(pdf_file)
             if docs:
                 all_docs.extend(docs)
-                print(f"PDF 加载成功，共 {len(docs)} 页")
-                total_len = sum(len(d.page_content) for d in docs)
-                print(f"   总字符数: {total_len}")
             else:
-                print("PDF 加载后返回空列表")
+                print("PDF null")
         except Exception as e:
-            print(f"PDF 加载失败: {e}")
+            print(f"PDF load failed: {e}")
             import traceback
             traceback.print_exc()
 
     if not all_docs:
         return
 
-    print(f"总文档数: {len(all_docs)}")
-
-    print("开始分块...")
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
         chunk_overlap=CHUNK_OVERLAP,
@@ -123,42 +113,23 @@ def main():
         add_start_index=True,
     )
     chunks = text_splitter.split_documents(all_docs)
-    print(f"生成的文本块数: {len(chunks)}")
 
-    if not chunks:
-        # 打印前200字符
-        for i, doc in enumerate(all_docs):
-            print(f"  Doc {i+1} 预览: {doc.page_content[:200]}...")
-        return
 
-    print("更新数据库...")
     try:
-        print(f"连接 Chroma Server: {CHROMA_HOST}:{CHROMA_PORT}")
 
         vectordb = get_vectordb()
 
-        # 获取原有数据
         old_data = vectordb.get()
         old_ids = old_data.get("ids", [])
 
-        print(f"数据库原有文本块: {len(old_ids)}")
-
-        # 删除旧数据
         if old_ids:
-            print("正在删除旧数据...")
             vectordb.delete(ids=old_ids)
-            print("旧数据删除完成")
 
-        # 写入新数据
-        print(f"正在写入 {len(chunks)} 个新文本块...")
         vectordb.add_documents(chunks)
-
         count = vectordb._collection.count()
 
-        print(f"数据库更新完成，当前向量数: {count}")
-
     except Exception as e:
-        print(f"数据库更新失败: {e}")
+        print(f"database update failed: {e}")
         import traceback
         traceback.print_exc()
 

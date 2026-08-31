@@ -38,10 +38,10 @@ Requirements:
             model="deepseek-v4-pro",
             temperature=0.3,
             max_tokens=500,
-            timeout=15.0
+            timeout=15.0,
+            extra_body = {"thinking": {"type": "disabled"}}
         )
         content = response.choices[0].message.content.strip()
-        # 解析成列表，过滤空行和可能的序号
         lines = content.split('\n')
         rewritten = []
         for line in lines:
@@ -82,57 +82,72 @@ vectordb2 = Chroma(
 reranker = CrossEncoder('BAAI/bge-reranker-base', max_length=512)
 
 def build_bm25(db1, db2):
-    all_texts = []
-    for db in (db1, db2):
-        data = db.get(include=['documents'])
-        all_texts.extend(data['documents'])
-    # 去重
-    seen = set()
-    unique = []
-    for t in all_texts:
-        if t not in seen:
-            seen.add(t)
-            unique.append(t)
-    # 英文分词
-    tokenized = [t.lower().split() for t in unique]
-    bm25 = BM25Okapi(tokenized)
-    return bm25, unique
+    unique_docs = []
+    seen_contents = set()
 
-bm25_index, bm25_texts = build_bm25(vectordb, vectordb2)
+    for db in (db1, db2):
+        data = db.get(include=["documents", "metadatas"])
+
+        documents = data.get("documents", [])
+        metadatas = data.get("metadatas", [])
+
+        for i, text in enumerate(documents):
+            if not text or text in seen_contents:
+                continue
+
+            seen_contents.add(text)
+
+            metadata = {}
+            if i < len(metadatas) and metadatas[i]:
+                metadata = metadatas[i]
+
+            unique_docs.append(
+                Document(
+                    page_content=text,
+                    metadata=metadata
+                )
+            )
+
+    tokenized = [
+        doc.page_content.lower().split()
+        for doc in unique_docs
+    ]
+
+    bm25 = BM25Okapi(tokenized)
+
+    return bm25, unique_docs
+
+bm25_index, bm25_docs = build_bm25(vectordb, vectordb2)
 
 def rebuild_bm25():
-    global bm25_index, bm25_texts
-
-    print("重新加载两个数据库并构建 BM25...")
-
-    bm25_index, bm25_texts = build_bm25(
+    global bm25_index, bm25_docs
+    bm25_index, bm25_docs = build_bm25(
         vectordb,
         vectordb2
     )
 
-    print(f"BM25 构建完成，文本块数: {len(bm25_texts)}")
-
 def bm25_search(query, k=3):
     tokens = query.lower().split()
     scores = bm25_index.get_scores(tokens)
+
     top_n = np.argsort(scores)[::-1][:k]
-    return [(bm25_texts[i], scores[i]) for i in top_n]
+
+    return [
+        (bm25_docs[i], scores[i])
+        for i in top_n
+    ]
 
 
 def rag_answer(question, debug=False):
     rebuild_bm25()
-    print(f"vectordb 文档数: {vectordb._collection.count()}")
-    print(f"vectordb2 文档数: {vectordb2._collection.count()}")
 
     search_queries = rewrite_query_multi(question, num_queries=3)
 
     start = time.time()
     seen_contents = set()
-    seen_sources = set()
     all_docs = []
 
     for query in search_queries:
-        # 向量检索
         docs1 = vectordb.similarity_search(query, k=3)
         docs2 = vectordb2.similarity_search(query, k=3)
         for doc in docs1 + docs2:
@@ -140,27 +155,34 @@ def rag_answer(question, debug=False):
             if content not in seen_contents:
                 seen_contents.add(content)
                 all_docs.append(doc)
-                src = doc.metadata.get("source", "Unknown")
-                seen_sources.add(src)
 
-        # 关键词检索
         bm25_results = bm25_search(query, k=3)
-        for text, score in bm25_results:
-            if text not in seen_contents:
-                seen_contents.add(text)
-                #包装为简易文档
-                all_docs.append(Document(page_content=text, metadata={"source": "BM25_match"}))
-                seen_sources.add("BM25_match")
+
+        for doc, score in bm25_results:
+            content = doc.page_content
+            if content not in seen_contents:
+                seen_contents.add(content)
+                all_docs.append(doc)
 
     search_time = time.time() - start
-    print(f"[搜索耗时] {search_time:.3f} 秒")
+    print(f"search time{search_time:.3f} 秒")
 
     pairs = [[question, doc.page_content] for doc in all_docs]
     scores = reranker.predict(pairs)
     sorted_indices = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)
     top_docs = [all_docs[i] for i in sorted_indices[:4]]
 
-    context = "\n\n".join([doc.page_content for doc in top_docs])
+    context_blocks = []
+
+    for i, doc in enumerate(top_docs, start=1):
+        source = doc.metadata.get("source", "Unknown")
+
+        context_blocks.append(
+            f"[Source {i}] {source}\n"
+            f"{doc.page_content}"
+        )
+
+    context = "\n\n".join(context_blocks)
 
     prompt = f"""You are a UK immigration advisor. Answer the question based on the provided context.
 
@@ -184,35 +206,33 @@ Answer:"""
             model="deepseek-v4-pro",
             temperature=0.0,
             max_tokens=2000,
-            timeout=30.0
+            timeout=30.0,
+            extra_body = {"thinking": {"type": "disabled"}}
         )
     except Exception as e:
-        print(f"API调用异常: {e}")
         return f"Error: {e}", []
 
     answer = response.choices[0].message.content
     if not answer:
-        print("API返回空内容:", response)
+        print("API return null", response)
 
-    sources = list(seen_sources) if seen_sources else []
+    sources = []
+    seen_final_sources = set()
+
+    for doc in top_docs:
+        source = doc.metadata.get("source")
+
+        if (
+                source
+                and source != "Unknown"
+                and source not in seen_final_sources
+        ):
+            seen_final_sources.add(source)
+            sources.append(source)
+
     return answer, sources
 
 
 # 测试
 if __name__ == "__main__":
-    print("移民咨询问答系统已启动（输入 'exit' 或 'quit' 退出）")
-    while True:
-        question = input("\n请输入您的问题: ").strip()
-        if question.lower() in ("exit", "quit", "q"):
-            break
-        if not question:
-            print("问题不能为空，请重新输入。")
-            continue
-
-        try:
-            ans, src = rag_answer(question)
-            print(f"\n回答: {ans}")
-            print(f"来源: {src}")
-        except Exception as e:
-            print(f"处理问题时出错: {e}")
-            print("请稍后重试或联系管理员。")
+    main()

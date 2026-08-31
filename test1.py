@@ -15,7 +15,7 @@ import test
 import get_htmldata
 
 BASE_URL = "https://www.gov.uk"
-CHECK_INTERVAL = 3600 * 6  # 6小时检查一次
+CHECK_INTERVAL = 3600 * 6
 OUTPUT_DIR = "./immigration_data"
 STATE_FILE = "./checkpoint.json"
 LOG_FILE = "./immigration_monitor.log"
@@ -147,7 +147,6 @@ def download_change_html(publication_url, hc_num, date_obj):
     soup = BeautifulSoup(html, 'html.parser')
     html_url = None
 
-    # 提取 accessible HTML 链接
     for link in soup.find_all('a', href=True):
         href = link['href']
         if '/accessible' in href or href.endswith('-accessible'):
@@ -227,7 +226,6 @@ def download_archive_pdf(archive_url, date_obj):
         logger.warning("didn't find the pdf")
 
 
-#主循环
 def check_and_update():
     logger.info("=" * 60)
     logger.info(f"check the update - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -235,7 +233,6 @@ def check_and_update():
 
     state = load_state()
     a = 0
-    #检查变更声明
     hc_num, change_date, change_url = check_statement_of_changes()
     if hc_num and state.get("last_change_hc") != hc_num:
         a = 1
@@ -269,7 +266,6 @@ def check_and_update():
 
     save_state(state)
     logger.info("Finished")
-    logger.info("=" * 60)
 
 
 def main():

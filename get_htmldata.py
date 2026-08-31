@@ -42,14 +42,12 @@ def smart_extractor(html: str) -> str:
 
     soup = BeautifulSoup(html, "html.parser")
 
-    # 语言检测
     html_tag = soup.find("html")
     lang = html_tag.get("lang") if html_tag else None
 
     if lang and not lang.startswith("en"):
         return ""
 
-    # 清理噪音
     for tag in soup.find_all(["nav", "footer", "header", "aside", "script", "style", "noscript"]):
         tag.decompose()
 
@@ -57,18 +55,14 @@ def smart_extractor(html: str) -> str:
     if not main:
         return ""
 
-    # 提取标题
     title_tag = main.find("h1") or soup.find("title")
     title = title_tag.get_text(strip=True) if title_tag else "No Title"
 
-    # 提取正文
     body_text = main.get_text(separator=" ", strip=True)
 
     if len(body_text) < 50:
-        print("    [跳过] main 内内容过短")
         return ""
 
-    #lang 属性缺失
     if not lang or not lang.startswith("en"):
         try:
             detected = detect(body_text)
@@ -77,7 +71,6 @@ def smart_extractor(html: str) -> str:
         except Exception:
             pass
 
-    print(f"提取标题: {title[:40]}... 内容长度: {len(body_text)} 字符")
     return f"Page Title: {title}\n\nContent: {body_text}"
 
 
@@ -104,8 +97,6 @@ def main():
 
             docs = loader.load()
 
-            # 打印每个成功提取的文档
-            print(f"成功提取 {len(docs)} 个页面")
             for doc in docs:
                 source_url = doc.metadata.get('source', '')
                 all_urls.append(source_url)
@@ -114,39 +105,27 @@ def main():
             all_documents.extend(docs)
 
         except Exception as e:
-            print(f"抓取失败: {e}")
             failed_urls.append(start_url)
 
         time.sleep(2)
 
-    # 汇总
-    print("\n" + "-" * 70)
-    print(f"总共抓取到 {len(all_documents)} 个页面")
 
     if all_urls:
         with open("captured_urls.txt", "w", encoding="utf-8") as f:
             for url in all_urls:
                 f.write(url + "\n")
-        print(f"所有 URL 已保存到 captured_urls.txt（共 {len(all_urls)} 个）")
-        print("\n前 5 个示例:")
-        for idx, url in enumerate(all_urls[:5], 1):
-            print(f"  {idx}. {url}")
-        if len(all_urls) > 5:
-            print(f"  ... 还有 {len(all_urls)-5} 个，详见文件")
+        print(f"all URL saved captured_urls.txt（ {len(all_urls)} ）")
     else:
-        print("没有提取到任何页面")
+        print("0")
 
     if failed_urls:
-        print(f"\n以下入口抓取失败:")
+        print(f"\nfailedurl")
         for url in failed_urls:
             print(f"  - {url}")
 
     if not all_documents:
-        print("\n没有有效文档，程序终止。")
         return
 
-    # 分块
-    print("\n正在分块...")
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
         chunk_overlap=CHUNK_OVERLAP,
@@ -154,44 +133,20 @@ def main():
         add_start_index=True,
     )
     chunks = text_splitter.split_documents(all_documents)
-    print(f"生成 {len(chunks)} 个文本块")
-
-    print("\n更新向量数据库...")
 
     try:
-        print(f"连接 Chroma Server: {CHROMA_HOST}:{CHROMA_PORT}")
-
         vectordb = get_vectordb()
-
-        # 获取数据库中原来的数据
         old_data = vectordb.get()
         old_ids = old_data.get("ids", [])
-
-        print(f"数据库原有文本块: {len(old_ids)}")
-
-        # 删除旧数据
         if old_ids:
-            print("正在删除旧数据...")
             vectordb.delete(ids=old_ids)
-            print("旧数据删除完成")
-
-        # 添加刚刚重新抓取的新数据
-        print(f"正在写入 {len(chunks)} 个新文本块...")
         vectordb.add_documents(chunks)
-
-        count = vectordb._collection.count()
-
-        print(f"数据库更新完成，当前向量数: {count}")
-
     except Exception as e:
-        print(f"数据库更新失败: {e}")
+        print(f"failed update{e}")
         import traceback
         traceback.print_exc()
         return
 
-    print("完成")
-    print(f"原始页面数: {len(all_documents)}")
-    print(f"文本块: {len(chunks)}")
 
 
 
