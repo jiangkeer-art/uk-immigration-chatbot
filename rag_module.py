@@ -63,7 +63,6 @@ embeddings = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"
 )
 
-# 数据库1
 vectordb = Chroma(
     collection_name="langchain",
     host="127.0.0.1",
@@ -71,7 +70,6 @@ vectordb = Chroma(
     embedding_function=embeddings
 )
 
-# 数据库2
 vectordb2 = Chroma(
     collection_name="langchain",
     host="127.0.0.1",
@@ -231,8 +229,3 @@ Answer:"""
             sources.append(source)
 
     return answer, sources
-
-
-# 测试
-if __name__ == "__main__":
-    main()

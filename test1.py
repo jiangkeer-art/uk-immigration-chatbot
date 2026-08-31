@@ -227,9 +227,7 @@ def download_archive_pdf(archive_url, date_obj):
 
 
 def check_and_update():
-    logger.info("=" * 60)
     logger.info(f"check the update - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    logger.info("=" * 60)
 
     state = load_state()
     a = 0
@@ -246,7 +244,6 @@ def check_and_update():
     else:
         logger.warning("can not get new changes")
 
-    #检查归档规则
     archive_url, archive_date = check_archive_rules()
     if archive_url and state.get("last_archive_url") != archive_url:
         a = 1
